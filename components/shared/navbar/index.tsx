@@ -2,10 +2,10 @@
 import React, { useEffect, useState } from "react";
 import { AiOutlineMenu, AiOutlineClose, AiOutlineSearch } from "react-icons/ai";
 import styles from "../../../styles/dashboard/Navbar.module.scss";
-import Logo from "../../../public/assets/logo/logo.webp";
-import Bell from "../../../public/assets/icons/bell.webp";
-import Dropdown from "../../../public/assets/icons/Dropdown.webp";
-import UserIcon from "../../../public/assets/images/LoginUser.webp";
+import Logo from "../../../public/assets/logo/LogoSqr.webp";
+import Bell from "../../../public/assets/icons/BellIcon2.webp";
+import Dropdown from "../../../public/assets/icons/Dropdown2.webp";
+import UserIcon from "../../../public/assets/icons/Avatar2.webp";
 import Image from "next/image";
 import { User } from "../../../interfaces";
 
@@ -71,7 +71,7 @@ const NavBar = ({
       <a href="/dashboard">
         <Image src={Logo} alt="logo" className={styles.log} />
       </a>
-      <div className={styles.search}>
+      {/* <div className={styles.search}>
         <div className={styles.input}>
           <input
             type="text"
@@ -93,32 +93,32 @@ const NavBar = ({
         <div className={styles.icon}>
           <AiOutlineSearch />
         </div>
-      </div>
+      </div> */}
       <nav>
         <ul
           className={nav ? [styles.menu, styles.active].join(" ") : styles.menu}
         >
-          <li className={styles.docs}>
+          {/* <li className={styles.docs}>
             <a href="/dashboard">Docs</a>
-          </li>
+          </li> */}
           <li>
-            <Image src={Bell} alt="Bell Icon" width={26} height={26} />
+            <Image src={Bell} alt="Bell Icon" width={17.48} height={19} />
           </li>
           <li className={styles.user}>
             <div className={styles.info}>
               <Image
                 src={UserIcon}
                 alt="Bell Icon"
-                width={48}
-                height={48}
+                width={50}
+                height={50}
               />
-              <span className={styles.name}>Adedeji</span>
+              {/* <span className={styles.name}>Adedeji</span> */}
               <span className={styles.drop}>
                 <Image
                   src={Dropdown}
                   alt="Bell Icon"
-                  width={20}
-                  height={20}
+                  width={8}
+                  height={4.76}
                 />
               </span>
             </div>

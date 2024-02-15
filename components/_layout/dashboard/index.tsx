@@ -73,10 +73,10 @@ const Layout = ({
 
   return (
     <div>
-      {/* <NavBar 
+      <NavBar 
       handleOpenMenu={() => setMobileMenu(true)}
       onSearchResultsChange={onSearchResultsChange}
-      /> */}
+      />
       <div className={styles.main}>
         <div className={styles.layout}>
           <div className={styles.sidebar}>

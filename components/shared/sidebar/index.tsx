@@ -53,15 +53,14 @@ const SideBar = ({ selectedOrganization, onOrganizationChange }: SideBarProps) =
       const handleContent = () => (
         <div
           style={{
-            backgroundColor: !isActive ? '#F3FCFC' : 'white',
-            borderLeft: !isActive ? '3px solid #39CDCC' : '3px solid #39CDCC',
-            borderTopRightRadius: isActive ? '0px' : '150px',
-            borderBottomRightRadius: isActive ? '0px' : '150px',
+            // backgroundColor: isActive ? '#F3FCFC' : 'white',
+            backgroundColor: isActive ? '#3976E8' : 'white',
+            // borderLeft: isActive ? '3px solid #39CDCC' : 'white',
             display: "flex",
             flexDirection: "row",
-            columnGap: "10px",
-            paddingLeft: "14px",
-            minHeight:"40px",
+            columnGap: "12px",
+            paddingLeft: "32px",
+            minHeight:"52px",
             alignItems:"center"
           }}>
           {menu.ICON(isActive)}
@@ -105,45 +104,17 @@ const SideBar = ({ selectedOrganization, onOrganizationChange }: SideBarProps) =
         <SelectTemplate 
         onChange={onOrganizationChange}
          selectedOrganization={selectedOrganization}
-
          />
       </div>
       <div className={styles.menu}>
       <div>
           {renderLinks(dashboardLinks)}
         </div>
-        <div>
-          <p>CUSTOMERS</p>
-          {renderLinks(customerLinks)}
-        </div>
-        <div>
-          <p>BUSINESSES</p>
-          {renderLinks(businessLinks)}
-        </div>
-        <div style={{
-          marginBottom:"50px"
-          }}>
-          <p>SETTINGS</p>
-          {renderLinks(settingsLinks)}
-        </div>
-        <Divider/>
-        <div style={{
+        {/* <div style={{
           cursor:"pointer"
           }}>
           {renderLinks(logoutLinks)}
-        </div>
-        <div
-        style={{
-          fontSize:"12px",
-          fontWeight:"400",
-          lineHeight:"14.08px",
-          letterSpacing:"0px",
-          paddingLeft:"14px",
-          marginTop:"40px",
-          color:"#213F7D"
-
-        }}
-        >v1.2.0</div>
+        </div> */}
       </div>
     </div>
     </>
