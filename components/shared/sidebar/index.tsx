@@ -53,9 +53,7 @@ const SideBar = ({ selectedOrganization, onOrganizationChange }: SideBarProps) =
       const handleContent = () => (
         <div
           style={{
-            // backgroundColor: isActive ? '#F3FCFC' : 'white',
-            backgroundColor: isActive ? '#3976E8' : 'white',
-            // borderLeft: isActive ? '3px solid #39CDCC' : 'white',
+            backgroundColor: isActive ? '#3976E8' : '#FFFFFF',
             display: "flex",
             flexDirection: "row",
             columnGap: "12px",
@@ -66,7 +64,7 @@ const SideBar = ({ selectedOrganization, onOrganizationChange }: SideBarProps) =
           {menu.ICON(isActive)}
           <div
             style={{
-              color: isActive ? '#213F7D' : '#8294B6',
+              color: isActive ? '#FFFFFF' : '#04004D',
             }}
             className={styles.menuTitle}>
             {menu.TITLE}
