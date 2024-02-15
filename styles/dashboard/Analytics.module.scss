@@ -1,0 +1,46 @@
+@import "../variables.scss";
+
+.container{
+    height: 160px;
+    border-radius: 4px;
+background: 
+linear-gradient(0deg, $white, $white);
+box-shadow: 3px 5px 20px 0px $boxShadow--1;
+
+
+
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    height: 100%;
+    border-radius: 4px;
+padding: 0px 50px 30px 22px;
+
+    p{
+        // font-family: Work Sans;
+font-size: 14px;
+font-weight: 500;
+line-height: 16px;
+letter-spacing: 0em;
+text-align: left;
+color: $color--1;
+
+    }
+
+    .amount{
+        // font-family: Work Sans;
+font-size: 24px;
+font-weight: 600;
+line-height: 28px;
+letter-spacing: 0em;
+text-align: left;
+color: $color--2;
+
+    }
+
+}
+}
+@media only screen and (min-width:1358px){
+}

@@ -1,0 +1,30 @@
+$button-border-1: #E4033B;
+$button-border-2: #39CDCC;
+$button-color-1: #E4033B;
+$button-color-2: #39CDCC;
+
+@mixin buttonStyle(  
+    $bR: 0, 
+    $b: none,
+    $w: auto, 
+    $h: auto,
+    $fSize: 16px,
+    $fW: normal,
+    $lh: normal,
+    $spacing: normal,
+    $align: left,
+    $color: black,
+) {
+    cursor: pointer;
+    font-family: Work Sans;
+    width: $w;
+    height: $h;
+    border-radius: $bR;
+    border: $b;
+    font-size: $fSize;
+    font-weight: $fW;
+    line-height: $lh;
+    letter-spacing: $spacing;
+    text-align: $align;
+    color: $color;
+}

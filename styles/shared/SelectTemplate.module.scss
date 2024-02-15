@@ -1,0 +1,7 @@
+@import "../variables.scss";
+
+.placehold::placeholder {
+    color: $color--2;
+    opacity: 0.7;
+  }
+  

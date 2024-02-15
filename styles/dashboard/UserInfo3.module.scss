@@ -1,0 +1,139 @@
+@import "../variables.scss";
+
+.container{
+    padding: 20px 20px;
+    box-shadow: 3px 5px 20px 0px $boxShadow--1;
+    margin-top: 40px;
+
+    .org,.name,.email2,.phone,.date,.status{
+        text-transform: capitalize;
+        font-family: Work Sans;
+font-size: 14px;
+font-weight: 400;
+line-height: 16px;
+letter-spacing: 0px;
+text-align: left;
+color: $color--1;
+    }
+
+    @media only screen and (max-width:1035px){
+        .tab{
+            overflow-x: scroll;
+
+            .date{
+                display: none;
+            }
+        }
+    }
+
+}
+
+// =========Table Filter Form STARTS============
+.formContainer{
+    padding: 30px 20px;
+    position: absolute;
+    top: 46px;
+    left: -4px;
+    background-color: $white;
+    z-index: 999;
+    width: 210px;
+height: 616px;
+border-radius: 4px;
+border: 1px solid rgba(84, 95, 125, 0.14)
+}
+
+.forWrapper{
+
+    input{
+        height: 40px;
+    }
+
+    .selet{
+        height: 40px;
+    }
+
+    .buttons{
+display: flex;
+flex-direction: row;
+justify-content: flex-start;
+gap: 14px;
+
+.reset, .filter{
+width: 90px;
+height: 40px;
+border-radius: 8px;
+border: 1px solid $color--1;
+font-size: 14px;
+font-weight: 600;
+line-height: 16px;
+letter-spacing: 0em;
+text-align: center;
+}
+.filter{
+color: $white;
+background-color: $backgroundColor;
+border: 1px solid $backgroundColor;
+}
+    }
+}
+// =========Table Filter Form ENDS============
+
+
+
+
+//   =====Table Column Titles STARTS=====
+.titleContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    gap: 5px;
+
+    .filterIcon{
+        width: 13px;
+        height: 10px;
+    }
+}
+
+.columnTitle {
+font-size: 12px;
+font-weight: 600;
+line-height: 14px;
+letter-spacing: 0em;
+display: flex;
+text-align: center;
+justify-content: flex-start;
+align-items: center;
+color: $color--1;
+  }
+// =====Table Column Titles ENDS=====
+
+// =========Table Action Popover STARTS============
+.popOver{
+    width: 150px;
+    height: 130px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 10px;
+
+    .actions{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        cursor: pointer;
+        gap: 8px;
+        p{
+color: $color--1;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 16px;
+            letter-spacing: 0em;
+            text-align: left;
+        }
+    }
+}
+
+// =========Table Action Popover ENDS============
