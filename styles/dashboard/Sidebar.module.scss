@@ -11,6 +11,8 @@
     box-shadow: 3px 5px 20px 0px $boxShadow--1;
 
     .brief{
+      border: 1px solid red;
+      visibility: hidden;
         display: flex;
         flex-direction: row;
         justify-content: center;

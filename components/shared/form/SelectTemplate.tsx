@@ -58,7 +58,7 @@ const SelectTemplate: React.FC<SelectTemplateProps> = ({ onChange, selectedOrgan
 
   const inputStyle = {
     border: 'none',
-    height: '35px',
+    // height: '35px',
     fontFamily: 'Work Sans',
     color: '#213F7D',
     fontWeight: 400,
