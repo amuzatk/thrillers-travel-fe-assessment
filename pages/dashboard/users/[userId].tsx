@@ -53,7 +53,7 @@ const UserDetails = () => {
       } }  
     >
       {userData ? (
-        <UserDetailMainPage userDetails={userData} />
+        <UserDetailMainPage />
       ) : (
         <p>Loading...</p>
       )}
