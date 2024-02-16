@@ -71,38 +71,12 @@ const NavBar = ({
       <a href="/dashboard">
         <Image src={Logo} alt="logo" className={styles.log} />
       </a>
-      {/* <div className={styles.search}>
-        <div className={styles.input}>
-          <input
-            type="text"
-            className={styles.web}
-            placeholder="Search for anything"
-            value={searchQuery}
-            onChange={handleSearchChange}
-          />
-          <input
-            type="text"
-            className={styles.mobile}
-            value={searchQuery}
-            // value={searchResults}
-            
-            onChange={handleSearchChange}
-          />
-        </div>
-
-        <div className={styles.icon}>
-          <AiOutlineSearch />
-        </div>
-      </div> */}
       <nav>
         <ul
           className={nav ? [styles.menu, styles.active].join(" ") : styles.menu}
         >
-          {/* <li className={styles.docs}>
-            <a href="/dashboard">Docs</a>
-          </li> */}
           <li>
-            <Image src={Bell} alt="Bell Icon" width={17.48} height={19} />
+            <Image className={styles.bell} src={Bell} alt="Bell Icon" width={17.48} height={19} />
           </li>
           <li className={styles.user}>
             <div className={styles.info}>
@@ -112,7 +86,6 @@ const NavBar = ({
                 width={50}
                 height={50}
               />
-              {/* <span className={styles.name}>Adedeji</span> */}
               <span className={styles.drop}>
                 <Image
                   src={Dropdown}

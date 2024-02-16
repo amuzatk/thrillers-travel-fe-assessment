@@ -24,7 +24,11 @@ import { Divider } from "antd";
     <div className={styles.tab}>
       <TabsComponent items={tabItems} onSelect={handleTabSelect}/>
       <Divider 
-      style={{marginTop:"-16px"}}
+      style={{
+        marginTop:"0px",
+        marginLeft:"21px",
+        border:"2px solid #EDEDF2"
+      }}
        />
     </div>
     <div className={styles.content}>

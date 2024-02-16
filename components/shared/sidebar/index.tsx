@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "../../../styles/dashboard/Sidebar.module.scss";
-import Briefcase from "../../../public/assets/icons/globeIcon.png";
+import GlobeIcon from "../../../public/assets/icons/globeIcon.png";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from 'next/router';
@@ -59,7 +59,7 @@ const SideBar = ({ selectedOrganization, onOrganizationChange }: SideBarProps) =
             columnGap: "12px",
             paddingLeft: "32px",
             minHeight:"52px",
-            alignItems:"center"
+            alignItems:"center",
           }}>
           {menu.ICON(isActive)}
           <div
@@ -97,13 +97,18 @@ const SideBar = ({ selectedOrganization, onOrganizationChange }: SideBarProps) =
   return (
     <>
     <div className={styles.main}>
+      
       <div className={styles.brief}>
-        <Image src={Briefcase} width={16} height={16} alt="Briefcase" />
+        <Image src={GlobeIcon} width={16} height={16} alt="Briefcase" />
         {/* <p>Get Started</p> */}
         <SelectTemplate 
         onChange={onOrganizationChange}
          selectedOrganization={selectedOrganization}
          />
+      </div>
+      <div className={styles.globe}>
+      <Image src={GlobeIcon} width={24} height={24} alt="GlobeIcon" />
+      <p>Get Started</p> 
       </div>
       <div className={styles.menu}>
       <div>

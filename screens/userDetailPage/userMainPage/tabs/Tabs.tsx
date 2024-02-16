@@ -13,7 +13,6 @@ interface TabsComponentProps {
 
 const TabsComponent: React.FC<TabsComponentProps> = ({ items, onSelect, userDetails }) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
-// console.log(userDetails,'userDetails==>> TabsComponent')
   const handleTabSelect = (index: number) => {
     setSelectedIndex(index);
     onSelect(index);

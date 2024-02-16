@@ -7,8 +7,9 @@ class MyDocument extends Document {
       <Html>
         <Head>
 {/* <link rel="stylesheet" href={process.env.GOOGLE_FONTS_URL} /> */}
-{/* <link rel="stylesheet" href="/fonts/fonts.css" /> */}
-{/* <link rel="stylesheet" href="/fonts/fonts.css" /> */}
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/>
 <script src={process.env.TAWKTO_SCRIPT_URL} async />
         </Head>
         <body>
