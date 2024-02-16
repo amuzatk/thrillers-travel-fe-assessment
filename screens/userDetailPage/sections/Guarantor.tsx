@@ -48,7 +48,7 @@ import { User } from "../../../interfaces";
           </div>
         </div>
       </div>
-    <Divider />
+    {/* <Divider /> */}
     </div>
   );
 };

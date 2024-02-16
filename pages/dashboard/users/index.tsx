@@ -16,7 +16,7 @@ const UsersDashboard = () => {
 
   return (
     <Layout 
-      isDetailPage={false} 
+      isDetailPage={true} 
       selectedOrganization={selectedOrganization} 
       onOrganizationChange={setSelectedOrganization}
       onSearchResultsChange={setSearchResults} // Pass the function to update search results

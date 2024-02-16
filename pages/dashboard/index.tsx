@@ -32,7 +32,7 @@ const AdminDashboard = () => {
       }}
     >
       <div style={{ marginTop: "40px" }}>
-<Dashboard />
+{/* <Dashboard /> */}
       </div>
     </Layout>
   );

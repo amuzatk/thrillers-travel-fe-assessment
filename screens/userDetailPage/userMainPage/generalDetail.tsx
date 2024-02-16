@@ -1,19 +1,35 @@
-import React from 'react'
-import PersonalInfo from '../sections/PersonalInfo'
-import Socials from '../sections/Socials'
-import EducationNEmployment from '../sections/Education&Employment'
-import Guarantor from '../sections/Guarantor'
-import OtherVitals from '../sections/OtherVitals'
-import { User } from '../../../interfaces'
+import React, { useEffect, useState } from 'react'
+import AnalyticsCard from '../../../components/card/AnalyticsCard'
+import { AnalyticsData, useAnalyticsData } from '../../../utils/sample-data';
+// import { AnalyticsData, useAnalyticsData } from "../../../utils/sample-data";
 
-  const GeneralDetails: React.FC<{ userDetails: User }> = ({ userDetails }) => {
+
+  // const GeneralDetails: React.FC<{ userDetails: User }> = ({ userDetails }) => {
+  const GeneralDetails = () => {
+  const [data, setData] = useState<AnalyticsData[]>([]);
+  // const [screenWidth, setScreenWidth] = useState(
+  //   typeof window !== 'undefined' ? window.innerWidth : 0
+  // );
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const analyticsData = await useAnalyticsData();
+      setData(analyticsData);
+    };
+
+    fetchData();
+  // }, [dummyVariable, onForceRerender]);
+}, []);
+
   return (
     <div>
-      < PersonalInfo userDetails={userDetails} />
-      <EducationNEmployment userDetails={userDetails}/>
-      <Socials userDetails={userDetails}/>
-      <Guarantor userDetails={userDetails}/>
-      <OtherVitals userDetails={userDetails}/>
+      {/* < PersonalInfo /> */}
+      This is deta
+      <AnalyticsCard item={{
+        image: '',
+        title: '',
+        amount: ''
+      }} />
     </div>
   )
 }

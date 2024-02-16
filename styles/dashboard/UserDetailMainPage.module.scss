@@ -2,16 +2,20 @@
 
 .main{
     background-color: $backgroundColor--3;
+    // border: 1px solid green;
 
     .tab{
-    background-color:$white;
+    // background-color:$white;
     border-radius: 4px;
+    // border: 1px solid green;
+
     }
 
     .content{
+    border: 1px solid yellow;
         margin-top: 20px;
-        background-color:$white;
-    border-radius: 4px;
-    box-shadow: 3px 5px 20px 0px $boxShadow--1;
+        // background-color:$white;
+    // border-radius: 4px;
+    // box-shadow: 3px 5px 20px 0px $boxShadow--1;
     }
 }

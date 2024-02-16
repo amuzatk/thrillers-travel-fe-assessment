@@ -6,6 +6,9 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
+{/* <link rel="stylesheet" href={process.env.GOOGLE_FONTS_URL} /> */}
+{/* <link rel="stylesheet" href="/fonts/fonts.css" /> */}
+{/* <link rel="stylesheet" href="/fonts/fonts.css" /> */}
 <script src={process.env.TAWKTO_SCRIPT_URL} async />
         </Head>
         <body>

@@ -58,7 +58,7 @@ import { currencyFormatter } from "../../../helpers";
           </div>
         </div>
       </div>
-    <Divider />
+    {/* <Divider /> */}
     </div>
   );
 };

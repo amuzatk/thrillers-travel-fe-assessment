@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "../../../styles/dashboard/Sidebar.module.scss";
-import Briefcase from "../../../public/assets/icons/Briefcase.png";
+import Briefcase from "../../../public/assets/icons/globeIcon.png";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from 'next/router';
@@ -99,6 +99,7 @@ const SideBar = ({ selectedOrganization, onOrganizationChange }: SideBarProps) =
     <div className={styles.main}>
       <div className={styles.brief}>
         <Image src={Briefcase} width={16} height={16} alt="Briefcase" />
+        {/* <p>Get Started</p> */}
         <SelectTemplate 
         onChange={onOrganizationChange}
          selectedOrganization={selectedOrganization}
