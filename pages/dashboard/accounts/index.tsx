@@ -12,12 +12,13 @@ const Loans = () => {
       selectedOrganization={selectedOrganization}
       onOrganizationChange={setSelectedOrganization}
       onSearchResultsChange={setSearchResults} // Pass the function to update search results
-      searchResults={searchResults} // Pass the searchResults state to the Layout component
-      pageTitle="Loans" 
-      dummyVariable={0} 
-      onForceRerender={function (newDummyVariable: number): void {
-        throw new Error('Function not implemented.');
-      } }     >
+      // searchResults={searchResults} // Pass the searchResults state to the Layout component
+      // pageTitle="Loans" 
+      // dummyVariable={0} 
+      // onForceRerender={function (newDummyVariable: number): void {
+      //   throw new Error('Function not implemented.');
+      // } }    
+       >
      <h1 style={{marginTop:"40px", fontSize:"25px"}}> Accounts Page </h1>
     </Layout>
   )

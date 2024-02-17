@@ -3,7 +3,7 @@ import React, { ReactNode, useEffect, useState } from "react";
 import styles from "../../../styles/layouts/Layout.module.scss";
 import { Drawer } from "antd";
 import { User } from "../../../interfaces";
-import { AnalyticsData, useAnalyticsData } from "../../../utils/sample-data";
+// import { AnalyticsData, useAnalyticsData } from "../../../utils/sample-data";
 import NavBar from "../../shared/navbar";
 import SideBar from "../../shared/sidebar";
 import UserDetailMainPage from "../../../screens/userDetailPage/userMainPage";
@@ -15,10 +15,10 @@ type Props = {
   selectedOrganization?: string,
   onOrganizationChange?: (newOrganization: string) => void;
   onSearchResultsChange?: (searcResult: User[]) => void;
-  searchResults?: User[]; // Define the searchResults prop
-  pageTitle?: string; // Add pageTitle prop
-  dummyVariable?: number; 
-  onForceRerender?: (newDummyVariable: number) => void; // Define the callback function prop
+  // searchResults?: User[]; // Define the searchResults prop
+  // pageTitle?: string; // Add pageTitle prop
+  // dummyVariable?: number; 
+  // onForceRerender?: (newDummyVariable: number) => void; // Define the callback function prop
 };
 
 const Layout = ({
@@ -28,27 +28,27 @@ const Layout = ({
   selectedOrganization,
   onOrganizationChange,
   onSearchResultsChange,
-  searchResults, // Use the searchResults prop in the component
-  pageTitle = "Analytics", // Default to "Dashboard" if not provided
-  dummyVariable,
-  onForceRerender, // Receive the callback function prop
+  // searchResults, // Use the searchResults prop in the component
+  // pageTitle = "Analytics", // Default to "Dashboard" if not provided
+  // dummyVariable,
+  // onForceRerender, // Receive the callback function prop
   
 }: Props) => {
   const [mainDash, setMainDash] = useState(!isDetailPage);
   const [mobileMenu, setMobileMenu] = useState(false);
-  const [data, setData] = useState<AnalyticsData[]>([]);
+  // const [data, setData] = useState<AnalyticsData[]>([]);
   const [screenWidth, setScreenWidth] = useState(
     typeof window !== 'undefined' ? window.innerWidth : 0
   );
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const analyticsData = await useAnalyticsData();
-      setData(analyticsData);
-    };
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const analyticsData = await useAnalyticsData();
+  //     setData(analyticsData);
+  //   };
 
-    fetchData();
-  }, [dummyVariable, onForceRerender]);
+  //   fetchData();
+  // }, [dummyVariable, onForceRerender]);
   // Close mobile menu
   const handleCloseMenu = () => setMobileMenu(false);
 

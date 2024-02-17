@@ -21,7 +21,7 @@ const SelectTemplate: React.FC<SelectTemplateProps> = ({ onChange, selectedOrgan
 
     if (storedUsers) {
       const parsedUsers = JSON.parse(storedUsers);
-      console.log(parsedUsers, 'parsedUsers ==> From localStorage');
+      // console.log(parsedUsers, 'parsedUsers ==> From localStorage');
       setOriginalData(parsedUsers);
       setFilteredData(parsedUsers);
     } else {

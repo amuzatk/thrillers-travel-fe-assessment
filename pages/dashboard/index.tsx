@@ -24,12 +24,12 @@ const AdminDashboard = () => {
       selectedOrganization={selectedOrganization}
       onOrganizationChange={setSelectedOrganization}
       onSearchResultsChange={setSearchResults} // Pass the onSearchResultsChange prop
-      searchResults={searchResults} // Pass the searchResults state to the Layout component
-      dummyVariable={dummyVariable}
-      onForceRerender={(newDummyVariable) => {
-        setDummyVariable(newDummyVariable);
-        handleDummyVariableChange(newDummyVariable);
-      }}
+      // searchResults={searchResults} // Pass the searchResults state to the Layout component
+      // dummyVariable={dummyVariable}
+      // onForceRerender={(newDummyVariable) => {
+      //   setDummyVariable(newDummyVariable);
+      //   handleDummyVariableChange(newDummyVariable);
+      // }}
     >
       <div style={{ marginTop: "40px" }}>
 {/* <Dashboard /> */}

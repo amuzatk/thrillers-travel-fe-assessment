@@ -21,10 +21,10 @@ const UsersDashboard = () => {
       selectedOrganization={selectedOrganization} 
       onOrganizationChange={setSelectedOrganization}
       onSearchResultsChange={setSearchResults} // Pass the function to update search results
-      searchResults={searchResults} // Pass the searchResults state to the Layout component
-      pageTitle="Users" // Set the pageTitle prop based on the current page
-      dummyVariable={dummyVariable}
-      onForceRerender={handleDummyVariableChange} // Pass the callback function
+      // searchResults={searchResults} // Pass the searchResults state to the Layout component
+      // pageTitle="Users" // Set the pageTitle prop based on the current page
+      // dummyVariable={dummyVariable}
+      // onForceRerender={handleDummyVariableChange} // Pass the callback function
   >
     <>
     <TransactionPageHeader />
