@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react'
 import AnalyticsCard from '../../../components/card/AnalyticsCard'
 import { AnalyticsData, useAnalyticsData } from '../../../utils/sample-data';
 import BarChat from './BarChat';
-// import { AnalyticsData, useAnalyticsData } from "../../../utils/sample-data";
-
+import DashboardCharts from '../../charts/dashboardCharts';
+// import DashChartss from '../../charts/dashChartss';
 
   // const GeneralDetails: React.FC<{ userDetails: User }> = ({ userDetails }) => {
   const GeneralDetails = () => {
@@ -32,7 +32,7 @@ import BarChat from './BarChat';
       // }}
        />
        <div>
-        <BarChat />
+        <DashboardCharts />
        </div>
     </div>
   )

@@ -1,24 +1,62 @@
+// .container{
+//     display: flex;
+//     flex-wrap: wrap;
+//     justify-content: space-between;
+//     gap: 20px;
+
+// .chart {
+//     width: 100%;
+//   }
+
+//   @media (max-width: 768px) {
+//     .chart {
+//     width: 250px;
+//     height: 250px;
+//     }
+//   }
+  
+//   @media (min-width: 768px) {
+//     .chart {
+//     width: 500px;
+//     }
+//   }
+// }
+  
+
+
 .container{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 20px;
+  // border: 1px solid red;
+  // overflow-x: hidden;
+  // display: flex;
+  // flex-wrap: wrap;
+  // justify-content: space-between;
+  // gap: 20px;
 
-.chart {
-    width: 100%;
+  .chart{
+    // border: 1px solid green;
+    // overflow-x: hidden;
+
+    max-width: 932.98px;
+// height: 209.51px;
+// top: 589px;
+// left: 377px;
+
   }
 
-  @media (max-width: 768px) {
-    .chart {
-    width: 250px;
-    height: 250px;
-    }
-  }
-  
-  @media (min-width: 768px) {
-    .chart {
-    width: 500px;
-    }
-  }
+// .chart {
+//   width: 100%;
+// }
+
+// @media (max-width: 768px) {
+//   .chart {
+//   width: 250px;
+//   height: 250px;
+//   }
+// }
+
+// @media (min-width: 768px) {
+//   .chart {
+//   width: 500px;
+//   }
+// }
 }
-  
