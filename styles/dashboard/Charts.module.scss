@@ -54,7 +54,7 @@ gap: 24px;
   
 }
 
-.right  p, span{
+.right  p{
   // font-family: Inter;
   font-size: 14px;
   font-weight: 400;
@@ -64,7 +64,8 @@ gap: 24px;
   color: #000000; 
 }
 
-.right span{
+
+.right .active{
   // border: 1px solid red;
   width: 116px;
 height: 42px;
@@ -160,4 +161,15 @@ color: #424242;
   }
 }
 
+////// for select dropdown ///////
+.selet{
+  // border: 1px solid red;
+  width: 154px;
+height: 42px;
+padding: 10px, 16px, 10px, 16px;
+// border-radius: 8px;
 
+// border: 1px solid #DADAE7;
+gap: 24px;
+
+}
