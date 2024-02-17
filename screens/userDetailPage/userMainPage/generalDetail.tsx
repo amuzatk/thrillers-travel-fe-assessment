@@ -23,7 +23,9 @@ import DashboardCharts from '../../charts/dashboardCharts';
 }, []);
 
   return (
-    <div>
+    <div 
+    // style={{border:"1px solid red"}}
+    >
       <AnalyticsCard 
       // item={{
       //   image: '',
