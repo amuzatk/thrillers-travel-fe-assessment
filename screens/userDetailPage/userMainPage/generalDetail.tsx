@@ -24,12 +24,13 @@ import { AnalyticsData, useAnalyticsData } from '../../../utils/sample-data';
   return (
     <div>
       {/* < PersonalInfo /> */}
-      This is deta
-      <AnalyticsCard item={{
-        image: '',
-        title: '',
-        amount: ''
-      }} />
+      <AnalyticsCard 
+      // item={{
+      //   image: '',
+      //   title: '',
+      //   amount: ''
+      // }}
+       />
     </div>
   )
 }
