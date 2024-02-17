@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { User } from '../../../interfaces';
 import Layout from '../../../components/_layout/dashboard';
-import UserInfo from '../../../screens/userInfo/userInfo';
+import TransactionPage from '../../../screens/userInfo/TransactionPage';
+import TransactionPageHeader from '../../../screens/userInfo/TransactionPageHeader';
 
 const UsersDashboard = () => {
   const [selectedOrganization, setSelectedOrganization] = useState('');
@@ -25,14 +26,21 @@ const UsersDashboard = () => {
       dummyVariable={dummyVariable}
       onForceRerender={handleDummyVariableChange} // Pass the callback function
   >
+    <>
+    <TransactionPageHeader />
+
       <div>
-        <UserInfo 
+        <TransactionPage
         selectedOrganization={selectedOrganization}
         searchResults={searchResults} // Pass search results to UserInfo3 component
         onSearchResultsChange={setSearchResults}
         onForceRerender={handleDummyVariableChange} // Pass the callback function
          />
       </div>
+
+
+    </>
+
     </Layout>
   );
 }

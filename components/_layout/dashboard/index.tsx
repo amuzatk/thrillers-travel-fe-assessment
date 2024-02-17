@@ -1,11 +1,9 @@
 
 import React, { ReactNode, useEffect, useState } from "react";
 import styles from "../../../styles/layouts/Layout.module.scss";
-import { Divider, Drawer } from "antd";
+import { Drawer } from "antd";
 import { User } from "../../../interfaces";
-import PageHeader from "../../../screens/userDetailPage/pageHeader";
 import { AnalyticsData, useAnalyticsData } from "../../../utils/sample-data";
-import AnalyticsCard from "../../card/AnalyticsCard";
 import NavBar from "../../shared/navbar";
 import SideBar from "../../shared/sidebar";
 import UserDetailMainPage from "../../../screens/userDetailPage/userMainPage";
@@ -106,24 +104,16 @@ const Layout = ({
           </div>
           <div 
           style={{
-            marginTop:"60px"
+            marginTop:"60px",
           }} 
-          className={styles.content}>
+          className={`${styles.content} ${mainDash ? styles.mainDashContent : ''}`}
+          >
             {mainDash ? (
               <>
-                {/* <h1>{pageTitle}</h1> */}
-                {/* <div className={styles.header}>
-{data.map((item, index) => (
-                    <AnalyticsCard item={item} />
-                  ))}
-                </div> */}
                 <UserDetailMainPage />
-                {/* <Divider /> */}
               </>
             ) : (
-              // null
-                // <PageHeader />
-                <Divider />
+              null
 
             )}
             <div className={styles.body}>{children}</div>
