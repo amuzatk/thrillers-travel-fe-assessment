@@ -46,9 +46,9 @@ const AnalyticsCard = () => {
   return (
     <div className={styles.container}>
       <div className={styles.left}>
-        <p>sssss</p>
-        <span className={styles.amount}>654333</span>
-        <h4>8990009</h4>
+        <p>ACCOUNT DETAILS</p>
+        <span className={styles.sterling}>STERLING BANK</span>
+        <h4>8000000000</h4>
       </div>
       <div className={styles.right}>
       <Image src={ClipBoard} alt='ClipBoard' width={70} height={28} />

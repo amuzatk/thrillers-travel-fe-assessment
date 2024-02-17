@@ -21,9 +21,8 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
+    // column-gap: 4px;
     height: 100%;
-    // border-radius: 4px;
-// padding: 0px 50px 30px 22px;
 
 p{
     // font-family: Inter;
@@ -33,21 +32,36 @@ p{
     letter-spacing: 0.01em;
     text-align: left;
     color: #8F8E8E;
-    text-transform: uppercase;
+    // text-transform: uppercase;
 
-    
+    // width: 105px;
+// height: 24px;
+}
+.sterling{
+    // font-family: Inter;
+font-size: 11px;
+font-weight: 500;
+line-height: 24px;
+letter-spacing: 0.01em;
+text-align: left;
+color: #000000;
+
+}
+
+h4{
+    // font-family: Inter;
+font-size: 21px;
+font-weight: 700;
+line-height: 24px;
+letter-spacing: 0.01em;
+text-align: left;
+color: #000000;
 
 }
 }
 
 .right{
-    // display: flex;
-    // flex-direction: column;
     align-self: flex-end;
-    // justify-content: center;
-    // height: 100%;
-    // border-radius: 4px;
-// padding: 0px 50px 30px 22px;
 }
 
 // .main{

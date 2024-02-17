@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import AnalyticsCard from '../../../components/card/AnalyticsCard'
 import { AnalyticsData, useAnalyticsData } from '../../../utils/sample-data';
+import BarChat from './BarChat';
 // import { AnalyticsData, useAnalyticsData } from "../../../utils/sample-data";
 
 
@@ -23,7 +24,6 @@ import { AnalyticsData, useAnalyticsData } from '../../../utils/sample-data';
 
   return (
     <div>
-      {/* < PersonalInfo /> */}
       <AnalyticsCard 
       // item={{
       //   image: '',
@@ -31,6 +31,9 @@ import { AnalyticsData, useAnalyticsData } from '../../../utils/sample-data';
       //   amount: ''
       // }}
        />
+       <div>
+        <BarChat />
+       </div>
     </div>
   )
 }
