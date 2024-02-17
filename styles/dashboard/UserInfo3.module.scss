@@ -3,18 +3,21 @@
 .container{
     // border: 1px solid red;
     padding: 20px 20px;
-    box-shadow: 3px 5px 20px 0px $boxShadow--1;
+    // box-shadow: 3px 5px 20px 0px $boxShadow--1;
     margin-top: 40px;
 
     .org,.name,.email2,.phone,.date,.status{
         text-transform: capitalize;
-        font-family: Work Sans;
+// // color: $color--1;
+// color: red;
 font-size: 14px;
 font-weight: 400;
-line-height: 16px;
-letter-spacing: 0px;
-text-align: left;
-color: $color--1;
+line-height: 22px;
+letter-spacing: 0em;
+// text-align: left;
+color: #535379;
+
+
     }
 
     @media only screen and (max-width:1035px){
@@ -83,29 +86,29 @@ border: 1px solid $backgroundColor;
 
 
 //   =====Table Column Titles STARTS=====
-.titleContainer{
-    display: flex;
-    flex-direction: row;
-    justify-content: left;
-    align-items: center;
-    gap: 5px;
+// .titleContainer{
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: left;
+//     align-items: center;
+//     gap: 5px;
+//     border: 1px solid red;
 
-    .filterIcon{
-        width: 13px;
-        height: 10px;
-    }
-}
+//     .filterIcon{
+//         width: 13px;
+//         height: 10px;
+//     }
+// }
 
 .columnTitle {
 font-size: 12px;
 font-weight: 600;
-line-height: 14px;
-letter-spacing: 0em;
-display: flex;
-text-align: center;
-justify-content: flex-start;
-align-items: center;
-color: $color--1;
+line-height: 16px;
+letter-spacing: 0.018em;
+// text-align: right;
+color: #84919A;
+
+
   }
 // =====Table Column Titles ENDS=====
 

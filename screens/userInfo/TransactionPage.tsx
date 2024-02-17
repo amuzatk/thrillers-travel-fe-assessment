@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Table, Popover, Button, Form, Spin, Alert, Popconfirm,message } from "antd";
+import { Table, Popover, Button, Form, Spin, Alert, Popconfirm,message, Checkbox } from "antd";
 import type { ColumnsType } from "antd/es/table";
 import Filter from "../../public/assets/icons/Filter.png";
 import ViewDetail from "../../public/assets/icons/ViewDetail.png";
@@ -14,6 +14,7 @@ import { toastHandler } from "../../helpers/toastHandler";
 import Paginate from "./pagination";
 import { User } from "../../interfaces";
 import FilterForm from "./FilterForm";
+// import { Checkbox, CheckboxChangeEvent } from 'antd';
 
 const tableData = (items: User[]) => {
   return items.map((item) => ({
@@ -55,6 +56,17 @@ const TransactionPage: React.FC<TransactionProps> = ({
   const [pageSize, setPageSize] = useState(10);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
+  const [selectAll, setSelectAll] = useState<boolean>(false);
+
+
+  // Your component code...
+  
+  const handleSelectAll = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const checked = e.target.checked;
+    // Logic to update state for all columns based on checked value
+    setSelectAll(checked);
+  };
+  
 
   const handleOrgFilterVisibility = () => {
     setOrgFilterVisible(!isOrgFilterVisible);
@@ -225,27 +237,17 @@ const TransactionPage: React.FC<TransactionProps> = ({
     phoneNumber: string;
     dateJoined: string;
     status: string;
-  }> = [    
+  }> = [ 
+    {
+        title: <Checkbox  checked={selectAll} />,
+        dataIndex: "selection",
+        key: "selection",
+        className: styles.selection,
+        render: () => <Checkbox /* Add any necessary props for individual select */ />,
+      },         
       {
         title: (
-          <div 
-          className={styles.titleContainer}
-          ><span className={`${styles.columnTitle} ${styles.orgTitle}`}>ORGANIZATION</span><Image
-            src={Filter}
-            alt="Custom Filter Icon"
-            onClick={handleOrgFilterVisibility}
-            width={13}
-            height={10}
-            className={styles.filterIcon}
-            />
-  { isOrgFilterVisible &&
-<FilterForm
-originalData={originalData}
-form={form}
-setFilteredData={setFilteredData}
-/>
-            }
-            </div>
+<span className={styles.columnTitle}>AMOUNT</span>
         ),
         dataIndex: "orgName",
         key: "orgName",
@@ -253,25 +255,7 @@ setFilteredData={setFilteredData}
       },
       {
         title: (
-          <div 
-          className={styles.titleContainer}
-          ><span className={`${styles.columnTitle} ${styles.nameTitle}`}>USERNAME</span><Image
-            src={Filter}
-            alt="Custom Filter Icon"
-            onClick={handleNameFilterVisibility}
-            width={13}
-            height={10}
-            className={styles.filterIcon}
-            />
-              { isNameFilterVisible &&
-<FilterForm
-originalData={originalData}
-form={form}
-setFilteredData={setFilteredData}
-/>
-            }
-
-            </div>
+  <span className={styles.columnTitle}>TRANSACTION ID</span>
         ),
         dataIndex: "userName",
         key: "userName",
@@ -279,25 +263,7 @@ setFilteredData={setFilteredData}
       },
       {
         title: (
-          <div 
-          className={styles.titleContainer}
-          ><span className={`${styles.columnTitle} ${styles.emailTitle}`}>EMAIL</span><Image
-            src={Filter}
-            alt="Custom Filter Icon"
-            onClick={handleEmailFilterVisibility}
-            width={13}
-            height={10}
-            className={styles.filterIcon}
-             />
-               { isEmailFilterVisible &&
-<FilterForm
-originalData={originalData}
-form={form}
-setFilteredData={setFilteredData}
-/>
-            }
-             
-             </div>
+<span className={styles.columnTitle}>TRANSACTION TYPE</span>            
         ),
         dataIndex: "email",
         key: "email",
@@ -308,53 +274,7 @@ setFilteredData={setFilteredData}
       },
       {
         title: (
-          <div 
-          className={styles.titleContainer}
-          ><span className={`${styles.columnTitle} ${styles.phoneTitle}`}>PHONE NUMBER</span><Image
-            src={Filter}
-            alt="Custom Filter Icon"
-            onClick={handlePhoneFilterVisibility}
-            width={13}
-            height={10}
-            className={styles.filterIcon}
-             />
-                            { isPhoneFilterVisible &&
-<FilterForm
-originalData={originalData}
-form={form}
-setFilteredData={setFilteredData}
-/>
-            }
-             
-             </div>
-        ),
-        dataIndex: "phoneNumber",
-        key: "phoneNumber",
-        className: styles.phone,
-      },
-      {
-        title: (
-          <div 
-          className={styles.titleContainer}
-  
-          ><span className={`${styles.columnTitle} ${styles.dateTitle}`}>DATE JOINED</span><Image
-            src={Filter}
-            alt="Custom Filter Icon"
-            onClick={handleDateFilterVisibility}
-            width={13}
-            height={10}
-            className={styles.filterIcon}
-             />
-             
-             { isDateFilterVisible &&
-<FilterForm
-originalData={originalData}
-form={form}
-setFilteredData={setFilteredData}
-/>
-            }
-
-             </div>
+<span className={styles.columnTitle}>DATE</span>             
         ),
         dataIndex: "dateJoined",
         key: "dateJoined",
@@ -362,25 +282,15 @@ setFilteredData={setFilteredData}
       },
       {
         title: (
-          <div className={styles.titleContainer}>
-            <span className={`${styles.columnTitle} ${styles.statusTitle}`}>STATUS</span>
-            <Image
-              src={Filter}
-              alt="Custom Filter Icon"
-            onClick={handleStatusFilterVisibility}
-              width={13}
-              height={10}
-              className={styles.filterIcon}
-            />
-
-{ isStatusFilterVisible &&
-<FilterForm
-originalData={originalData}
-form={form}
-setFilteredData={setFilteredData}
-/>
-            }
-          </div>
+   <span className={styles.columnTitle}>TIME</span>
+        ),
+        dataIndex: "phoneNumber",
+        key: "phoneNumber",
+        className: styles.phone,
+      },
+      {
+        title: (
+            <span className={styles.columnTitle}>STATUS</span>
         ),
         dataIndex: "status",
         key: "status",
@@ -388,10 +298,26 @@ setFilteredData={setFilteredData}
         render: (status: string) => { // Specify the type of status as string
           // Define styles based on the status value
           let statusStyle = {};
+          let circleStyle = { 
+            width: "8px",
+            height: "8px",
+            borderRadius: "50%",
+            display: "inline-block",
+            marginRight: "4px" // Adjust as needed
+          };
           if (status === "Inactive") {
-            statusStyle = { color: "#545F7D", borderRadius: "25px", padding: "6px 12px", background: "#f5f5f7" };
+            statusStyle = { color: "#545F7D", borderRadius: "25px", padding: "6px 12px", background: "#f5f5f7", };
           } else if (status === "Blacklisted") {
-            statusStyle = { color: "#E4033B", borderRadius: "25px", padding: "6px 12px", background: "#fce6eb" };
+            statusStyle = { 
+                color: "#E4033B", 
+                background:"#FEECEE",
+                borderRadius: "100px", 
+                padding: "4px 12px",  
+                // background: "#fce6eb",
+                height:"30px",
+                 width:"106px",
+                 border:"1px solid #F14156"
+              };
           } else if (status === "Active") {
             statusStyle = { 
                 color: "#144909",
@@ -400,77 +326,21 @@ setFilteredData={setFilteredData}
                  padding: "4px 12px", 
                  background: "#EFFDED",
                  height:"30px",
-                 width:"106px"
+                 width:"106px", 
                  };
           } else if (status === "Pending") {
-            statusStyle = { color: "#E9B200", borderRadius: "25px", padding: "6px 12px", background: "#fdf7e6" };
+            statusStyle = { color: "#E9B200", borderRadius: "25px", padding: "6px 12px", background: "#fdf7e6",  };
           }
       
-          return <span style={statusStyle}>  {status}</span>;
+          return <span style={statusStyle}> 
+           <span 
+            >
+                ● 
+            </span>
+           {status}
+           </span>;
         },
-      },
-      
-    {
-      dataIndex: "action",
-      key: "action",
-      render: (_: any, record: any) => (
-        <Popover
-  content={      
-            
-            <div className={styles.popOver}>
-                <div>
-                  <Link href={`/dashboard/users/${record.id}`} className={styles.actions}>
-                    <Image src={ViewDetail} alt="Custom Filter Icon" width={16} height={16} />
-                    <p>View Details</p>
-                  </Link>
-                </div>
-
-                <div >
-                  <Popconfirm
-                    title={`Are you sure you want to blacklist ${record.userName}?`}
-                    onConfirm={() => handleBlacklist(record.id)}
-                    okText="Yes"
-                    cancelText="No"
-                  >
-                    <a
-                    className={styles.actions}
-                    >
-                      <Image src={Blacklist} alt="Custom Filter Icon" width={16} height={16} />
-                      <p>Blacklist User</p>
-                    </a>
-                  </Popconfirm>
-                </div>
-                <div 
-                >
-                  <Popconfirm
-                    title={`Are you sure you want to activate ${record.userName}?`}
-                    onConfirm={() => handleActivate(record.id)}
-                    okText="Yes"
-                    cancelText="No"
-                  >
-                    <a
-                    className={styles.actions}
-                    >
-                      <Image src={Activate} alt="Custom Filter Icon" width={16} height={16} />
-                      <p>Activate User</p>
-                    </a>
-                  </Popconfirm>
-                </div>
-              </div>
-  }
-  trigger="click"
-  open={popoverVisible === record.id}
-  onOpenChange={(visible) => setPopoverVisible(visible ? record.id : null)}
->
-  <Button type="link">
-    <Image src={ActionButton} alt="Custom Icon" style={{ width: 16, height: 16 }} />
-  </Button>
-</Popover>
-
-      
-      
-        )
-    }, 
+      }, 
   ];
 
   return (

@@ -4,8 +4,8 @@ import ExportIcon from '../../public/assets/icons/exportIcon.webp'
 import Calendar from '../../public/assets/icons/calendar.webp'
 import Image from 'next/image'
 import { DownOutlined } from '@ant-design/icons';
-import { DatePicker } from 'antd'
-import CustomIcon from '../../constants/svgIcons/CallendarIcon'
+// import { DatePicker } from 'antd'
+// import CustomIcon from '../../constants/svgIcons/CallendarIcon'
 
 const TransactionPageHeader = () => {
 
@@ -77,8 +77,8 @@ export default TransactionPageHeader
 // import CustomIcon from '../../constants/svgIcons/CallendarIcon';
 
 // const TransactionPageHeader = () => {
-//     const [dateRange, setDateRange] = useState(null);
 //     const [showDatePicker, setShowDatePicker] = useState(false);
+//     const [selectedDates, setSelectedDates] = useState([]);
 //     const inputStyle = {
 //         border: 'none',
 //         height: '30px',
@@ -93,12 +93,8 @@ export default TransactionPageHeader
 //         setShowDatePicker(!showDatePicker);
 //     };
 
-//     const handleDateChange = (dates, dateStrings) => {
-//         // dates is an array containing the start date and the end date
-//         // dateStrings is an array containing the formatted strings of the start date and the end date
-//         if (dates && dates.length === 2) {
-//             setDateRange(`${dateStrings[0]} - ${dateStrings[1]}`);
-//         }
+//     const handleDateChange = (dates) => {
+//         setSelectedDates(dates);
 //     };
 
 //     return (
@@ -135,30 +131,22 @@ export default TransactionPageHeader
 //                         onClick={handleCalendarClick}
 //                         style={{ cursor: 'pointer' }}
 //                     />
-           
-//                         <DatePicker.RangePicker
-//                             // style={{
-//                             //     width: "100%",
-//                             //     height: "40px",
-//                             // }}
-//                             // format="MMM DD, YYYY"
-//                             // suffixIcon={<CustomIcon />}
-//                             onChange={handleDateChange}
-//                         />
-
-//                     {/* {showDatePicker && (
-//                         <DatePicker.RangePicker
-//                             // style={{
-//                             //     width: "100%",
-//                             //     height: "40px",
-//                             // }}
-//                             format="MMM DD, YYYY"
-//                             // suffixIcon={<CustomIcon />}
-//                             onChange={handleDateChange}
-//                         />
-//                     )} */}
-
-//                     <span>{dateRange}</span>
+//                     {showDatePicker && (
+//                         <>
+//                             <DatePicker.RangePicker
+//                                 style={{ marginTop: '10px' }}
+//                                 onChange={handleDateChange}
+//                                 format="MMM DD, YYYY"
+//                             />
+//                         </>
+//                     )}
+//                     <span>
+//                         {selectedDates.length === 2 && (
+//                             <>
+//                                 {selectedDates[0].format('MMM DD, YYYY')} - {selectedDates[1].format('MMM DD, YYYY')}
+//                             </>
+//                         )}
+//                     </span>
 //                 </div>
 //                 <div className={styles.export}>
 //                     <Image src={ExportIcon} alt='ExportIcon' width={20} height={20} />
@@ -170,4 +158,5 @@ export default TransactionPageHeader
 // };
 
 // export default TransactionPageHeader;
+
 

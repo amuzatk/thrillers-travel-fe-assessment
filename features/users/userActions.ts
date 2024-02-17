@@ -44,11 +44,6 @@ export const generateMockData = (): User[] => {
         employmentStatus: "Employed",
         level: "Bsc",
         loanRepayment: (Math.random() * 200).toFixed(2),
-        // monthlyIncome: {
-        //   0: (Math.random() * 200000 + 400000).toFixed(2),
-        //   1: (Math.random() * 200000 + 550000).toFixed(2),
-        //   length: 2,
-        // },
         monthlyIncome: [
           (Math.random() * 200000 + 400000).toFixed(2),
           (Math.random() * 200000 + 550000).toFixed(2),
