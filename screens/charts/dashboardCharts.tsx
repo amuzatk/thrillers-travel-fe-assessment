@@ -145,6 +145,13 @@ const DashboardCharts = () => {
     return filteredData;
   };
 
+   // Calculate total delivered value based on the filtered data
+  const filteredData = getChartData();
+
+// Now you can use filteredData in the reduce method
+const totalDelivered = filteredData.reduce((acc: number, curr: { delivered: number }) => acc + curr.delivered, 0);
+
+
   // Callback function to handle selection change
   const handleSelectChange = (value: string) => {
     setSelectedData(value); // Update the selected value
@@ -172,7 +179,8 @@ const DashboardCharts = () => {
         <p><span> +0.00% </span> vs {selectedData} </p>
       </div>
       <div className={styles.lower}>
-        <h2>₦0.00</h2>
+        {/* <h2>₦0.00</h2> */}
+        <h2>₦{totalDelivered.toFixed(2)}</h2>
         <p>in total value</p>
       </div>
     </div>
