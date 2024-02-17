@@ -18,7 +18,7 @@ const Loans = () => {
       onForceRerender={function (newDummyVariable: number): void {
         throw new Error('Function not implemented.');
       } }     >
-     <h1 style={{marginTop:"40px", fontSize:"25px"}}> Loans Page </h1>
+     <h1 style={{marginTop:"40px", fontSize:"25px"}}> Accounts Page </h1>
     </Layout>
   )
 }

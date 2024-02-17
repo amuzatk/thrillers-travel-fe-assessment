@@ -19,7 +19,7 @@ const Guarantors = () => {
         throw new Error('Function not implemented.');
       } }    >
       <div>
-        <h1 style={{ marginTop: "40px" }}>Guarantors Page TESTING FORM3</h1>
+        <h1 style={{ marginTop: "40px" }}>Transfer Page </h1>
       </div>
     </Layout>
   );
