@@ -65,4 +65,3 @@ export const jsonData = JSON.stringify({
   barChartData: mockBarChartData
 });
 
-console.log(jsonData);

@@ -12,7 +12,6 @@ const DashboardCharts = () => {
   // ==========================================================
   const dispatch = useAppDispatch();
   const {  barChartData, transactionStatus, barChartDataStatus, error } = useSelector((state: RootState) => state.posts);
-console.log(barChartData,'barChartData==NEW')
   useEffect(() => {
     dispatch(fetchTransactions());
     dispatch(fetchBarChartData());
