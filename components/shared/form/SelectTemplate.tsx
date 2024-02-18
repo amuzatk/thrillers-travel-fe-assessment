@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { DownOutlined } from '@ant-design/icons';
 import styles from '../../../styles/shared/SelectTemplate.module.scss';
-import { User } from '../../../interfaces';
-import { fetchUsers } from '../../../features/users/userActions';
+
 
 interface SelectTemplateProps {
   onChange: (selectedOrganization: string) => void;
@@ -10,8 +9,6 @@ interface SelectTemplateProps {
 }
 
 const SelectTemplate: React.FC<SelectTemplateProps> = ({ onChange, selectedOrganization }) => {
-  const [originalData, setOriginalData] = useState<Array<User>>([]);
-  const [filteredData, setFilteredData] = useState<Array<User>>([]);
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [dropdownOpen, setDropdownOpen] = useState<boolean>(false);
 
@@ -21,26 +18,10 @@ const SelectTemplate: React.FC<SelectTemplateProps> = ({ onChange, selectedOrgan
 
     if (storedUsers) {
       const parsedUsers = JSON.parse(storedUsers);
-      // console.log(parsedUsers, 'parsedUsers ==> From localStorage');
-      setOriginalData(parsedUsers);
-      setFilteredData(parsedUsers);
+      console.log(parsedUsers, 'parsedUsers ==> From localStorage');
     } else {
-      // Fetch and store users if not present in local storage
-      fetchUsers();
     }
   }, []);
-
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const searchTerm = event.target.value.toLowerCase();
-    setSearchTerm(searchTerm);
-
-    const filteredUsers = originalData.filter(
-      (user) => user?.orgName.toLowerCase().includes(searchTerm)
-    );
-    
-    setFilteredData(filteredUsers);
-    setDropdownOpen(true);
-  };
 
   const handleSelectChange = (selectedValue: string) => {
     // Check if "Switch Organization" is selected
@@ -58,7 +39,7 @@ const SelectTemplate: React.FC<SelectTemplateProps> = ({ onChange, selectedOrgan
 
   const inputStyle = {
     border: 'none',
-    // height: '35px',
+    height: '35px',
     fontFamily: 'Work Sans',
     color: '#213F7D',
     fontWeight: 400,
@@ -78,7 +59,7 @@ const SelectTemplate: React.FC<SelectTemplateProps> = ({ onChange, selectedOrgan
   type="text"
   placeholder="Switch Organization"
   value={searchTerm}
-  onChange={handleInputChange}
+  // onChange={handleInputChange}
   style={inputStyle}
   className={styles.placehold}
 />
@@ -128,28 +109,6 @@ const SelectTemplate: React.FC<SelectTemplateProps> = ({ onChange, selectedOrgan
               Switch Organization
             </button>
           </li>
-          {filteredData.map((item) => (
-            <li key={item.id}>
-              <button
-                onClick={() => handleSelectChange(item?.orgName)}
-                style={{
-                  background: 'none',
-                  border: 'none',
-                  cursor: 'pointer',
-                  fontFamily: 'Work Sans',
-                  color: '#213F7D',
-                  fontWeight: 400,
-                  lineHeight: '18.77px',
-                  fontSize: '16px',
-                  width: '100%', // Set the width as needed
-                  textAlign: 'left',
-                  padding: '8px 12px',
-                }}
-              >
-                {item.orgName}
-              </button>
-            </li>
-          ))}
         </ul>
       )}
     </div>

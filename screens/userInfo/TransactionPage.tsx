@@ -5,6 +5,11 @@ import moment from "moment";
 import Paginate from "./pagination";
 import {  Transaction } from "../../interfaces";
 
+import { useSelector } from 'react-redux';
+import { fetchTransactions, fetchBarChartData } from '../../store/postSlice';
+import { RootState } from '../../store';
+import { useAppDispatch } from '../../store/hooks';
+
 const TransactionPage =() => {
   const [filteredData, setFilteredData] = useState<Transaction[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -12,6 +17,28 @@ const TransactionPage =() => {
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
   const [selectAll, setSelectAll] = useState<boolean>(false);
+
+  // ========================================
+
+  const dispatch = useAppDispatch();
+  const { transactions, transactionStatus, barChartDataStatus, error } = useSelector((state: RootState) => state.posts);
+
+  useEffect(() => {
+    dispatch(fetchTransactions());
+    // dispatch(fetchBarChartData());
+    setFilteredData(transactions);
+    setIsLoading(false);
+  }, [dispatch]);
+
+  if (transactionStatus === 'loading' || barChartDataStatus === 'loading') {
+    return <div>Loading...</div>;
+  }
+
+  if (transactionStatus === 'failed' || barChartDataStatus === 'failed') {
+    return <div>Error: {error}</div>;
+  }
+
+  // =========================================
 
   useEffect(() => {
     // Retrieve mock data from local storage

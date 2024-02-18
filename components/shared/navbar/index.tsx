@@ -7,20 +7,16 @@ import Bell from "../../../public/assets/icons/BellIcon2.webp";
 import Dropdown from "../../../public/assets/icons/Dropdown2.webp";
 import UserIcon from "../../../public/assets/icons/Avatar2.webp";
 import Image from "next/image";
-import { User } from "../../../interfaces";
 
 const NavBar = ({
   handleOpenMenu,
   menuConstant,
-  onSearchResultsChange, // Add this prop to pass search results to parent component
 }: {
   menuConstant?: boolean;
   handleOpenMenu: () => void;
-  onSearchResultsChange: (results: User[]) => void;
 }) => {
   const [nav, setNav] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
-  const [searchResults, setSearchResults] = useState<User[]>([]);
   const [screenWidth, setScreenWidth] = useState(
     typeof window !== 'undefined' ? window.innerWidth : 0
   );
@@ -60,7 +56,6 @@ const NavBar = ({
     );
   
     // Callback to the parent component with the search results
-    onSearchResultsChange(results);
   };
 
   return (

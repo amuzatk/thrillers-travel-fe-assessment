@@ -39,7 +39,6 @@ const Login = () => {
   };
 
 
-
   return (
     <main className={styles.container}>
       <section className={styles.image}>

@@ -72,7 +72,7 @@ const generateTransactionData = (): Transaction[] => {
     
     const transactions: Transaction[] = [];
 
-    for (let i = 0; i < 200; i++) {
+    for (let i = 0; i < 100; i++) {
         const randomNumber = faker.datatype.number({ min: 1000000000, max: 9999999999 }).toString();
         const transactionId = `TR_${randomNumber}`;
         

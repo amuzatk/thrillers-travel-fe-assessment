@@ -1,30 +1,43 @@
-import { useState } from 'react';
+import React, { useEffect,useState } from 'react';
 import { BarChart, XAxis, YAxis, Tooltip, ResponsiveContainer, Bar } from 'recharts';
 import styles from '../../styles/dashboard/Charts.module.scss';
 import { BarChartData, Transaction } from '../../interfaces';
 import CustomSelect from './CustomSelect';
+import { useSelector } from 'react-redux';
+import { fetchTransactions, fetchBarChartData } from '../../store/postSlice';
+import { RootState } from '../../store';
+import { useAppDispatch } from '../../store/hooks';
 
-interface Props {
-  mockBarChartData: BarChartData[];
-  mockTableData:  Transaction[];
-}
+const DashboardCharts = () => {
+  // ==========================================================
+  const dispatch = useAppDispatch();
+  const {  barChartData, transactionStatus, barChartDataStatus, error } = useSelector((state: RootState) => state.posts);
+console.log(barChartData,'barChartData==NEW')
+  useEffect(() => {
+    dispatch(fetchTransactions());
+    dispatch(fetchBarChartData());
+  }, [dispatch]);
 
-const DashboardCharts: React.FC<Props> = ({ mockBarChartData,mockTableData }) => {
-
-  if (!mockBarChartData) {
-    // Handle the case where mockBarChartData is undefined
+  if (transactionStatus === 'loading' || barChartDataStatus === 'loading') {
     return <div>Loading...</div>;
   }
+
+  if (transactionStatus === 'failed' || barChartDataStatus === 'failed') {
+    return <div>Error: {error}</div>;
+  }
+
+
+// =======================================================
   const [selectedData, setSelectedData] = useState<string>('Last 7 days');
 
   const getChartData = () => {
     let filteredData;
     if (selectedData === 'Today') {
-      filteredData = mockBarChartData.slice(-1);
+      filteredData = barChartData.slice(-1);
     } else if (selectedData === 'Last 7 days') {
-      filteredData = mockBarChartData.slice(-7);
+      filteredData = barChartData.slice(-7);
     } else if (selectedData === 'Last 30 days') {
-      filteredData = mockBarChartData.slice(-30);
+      filteredData = barChartData.slice(-30);
     }
     return filteredData;
   };

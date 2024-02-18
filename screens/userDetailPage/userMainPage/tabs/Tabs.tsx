@@ -3,15 +3,13 @@ import { Tab, Tabs, TabList } from 'react-tabs';
 import styles from '../../../../styles/dashboard/Tabs.module.scss';
 import { currencyFormatter } from '../../../../helpers';
 import Image from 'next/image';
-import { User } from '../../../../interfaces';
 
 interface TabsComponentProps {
   items: { label: string; content: React.ReactNode }[];
   onSelect: (index: number) => void;
-  userDetails?: User;
 }
 
-const TabsComponent: React.FC<TabsComponentProps> = ({ items, onSelect, userDetails }) => {
+const TabsComponent: React.FC<TabsComponentProps> = ({ items, onSelect,}) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const handleTabSelect = (index: number) => {
     setSelectedIndex(index);

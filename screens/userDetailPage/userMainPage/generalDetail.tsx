@@ -11,14 +11,12 @@ const GeneralDetails: React.FC<Props> = ({ mockTableData, mockBarChartData }) =>
 
   return (
     <div 
-    // style={{border:"1px solid red"}}
     >
       <AnalyticsCard 
  mockTableData={mockTableData}
        />
        <div>
-        <DashboardCharts
-          mockBarChartData={mockBarChartData} mockTableData={mockTableData}         />
+        <DashboardCharts />
        </div>
     </div>
   )
