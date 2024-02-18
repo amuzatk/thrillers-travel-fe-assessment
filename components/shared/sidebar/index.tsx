@@ -41,11 +41,6 @@ const SideBar = ({ selectedOrganization, onOrganizationChange }: SideBarProps) =
 
   // Group links based on their categories
   const dashboardLinks = DASHBOARD_LINKS.filter((link: LinkItem) => link.ISDASHBOARD);
-  const customerLinks = DASHBOARD_LINKS.filter((link: LinkItem) => link.ISCUSTOMER);
-  const businessLinks = DASHBOARD_LINKS.filter((link: LinkItem) => link.ISBUSINESS);
-  const settingsLinks = DASHBOARD_LINKS.filter((link: LinkItem) => link.ISSETTINGS);
-  const logoutLinks = DASHBOARD_LINKS.filter((link: LinkItem) => link.ISLOGOUT);
-
   const renderLinks = (links: LinkItem[]) => {
     return links.map((menu: LinkItem) => {
       const isActive = router.pathname === menu.LINK;
@@ -72,16 +67,10 @@ const SideBar = ({ selectedOrganization, onOrganizationChange }: SideBarProps) =
         </div>
       );
 
-      const handleClick = () => {
-        if (menu.ISLOGOUT) {
-          onLogout(); // Call the onLogout function for logout links
-        }
-      };
-
       return (
         <div className={styles.items} key={menu.SLUG}>
           {menu.ISLOGOUT ? (
-            <div className={styles.item} onClick={handleClick}>
+            <div className={styles.item} >
               {handleContent()}
             </div>
           ) : (
@@ -100,7 +89,6 @@ const SideBar = ({ selectedOrganization, onOrganizationChange }: SideBarProps) =
       
       <div className={styles.brief}>
         <Image src={GlobeIcon} width={16} height={16} alt="Briefcase" />
-        {/* <p>Get Started</p> */}
         <SelectTemplate 
         onChange={onOrganizationChange}
          selectedOrganization={selectedOrganization}
@@ -114,11 +102,6 @@ const SideBar = ({ selectedOrganization, onOrganizationChange }: SideBarProps) =
       <div>
           {renderLinks(dashboardLinks)}
         </div>
-        {/* <div style={{
-          cursor:"pointer"
-          }}>
-          {renderLinks(logoutLinks)}
-        </div> */}
       </div>
     </div>
     </>

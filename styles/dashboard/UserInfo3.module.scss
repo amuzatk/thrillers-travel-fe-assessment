@@ -5,28 +5,17 @@
     padding: 20px 20px;
     // box-shadow: 3px 5px 20px 0px $boxShadow--1;
     margin-top: 40px;
-
-    .org,.name,.email2,.phone,.date,.status{
-        text-transform: capitalize;
-// // color: $color--1;
-// color: red;
-font-size: 14px;
-font-weight: 400;
-line-height: 22px;
-letter-spacing: 0em;
-// text-align: left;
-color: #535379;
-
-
-    }
+    // margin: 0 20px;
 
     @media only screen and (max-width:1035px){
+        overflow-x: scroll;
+        
         .tab{
             overflow-x: scroll;
 
-            .date{
-                display: none;
-            }
+            // .date{
+            //     display: none;
+            // }
         }
     }
 
@@ -86,20 +75,6 @@ border: 1px solid $backgroundColor;
 
 
 //   =====Table Column Titles STARTS=====
-// .titleContainer{
-//     display: flex;
-//     flex-direction: row;
-//     justify-content: left;
-//     align-items: center;
-//     gap: 5px;
-//     border: 1px solid red;
-
-//     .filterIcon{
-//         width: 13px;
-//         height: 10px;
-//     }
-// }
-
 .columnTitle {
 font-size: 12px;
 font-weight: 600;
@@ -107,37 +82,24 @@ line-height: 16px;
 letter-spacing: 0.018em;
 // text-align: right;
 color: #84919A;
-
-
+// color: red;
+text-transform: uppercase;
   }
-// =====Table Column Titles ENDS=====
 
-// =========Table Action Popover STARTS============
-.popOver{
-    width: 150px;
-    height: 130px;
-    border-radius: 4px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding-left: 10px;
-
-    .actions{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        cursor: pointer;
-        gap: 8px;
-        p{
-color: $color--1;
-            font-size: 14px;
-            font-weight: 500;
-            line-height: 16px;
-            letter-spacing: 0em;
-            text-align: left;
-        }
-    }
+  .naira,.status,.amount{
+    text-transform: capitalize;
+// // color: $color--1;
+font-size: 14px;
+font-weight: 400;
+line-height: 22px;
+letter-spacing: 0em;
+// text-align: left;
+color: #535379;
 }
 
-// =========Table Action Popover ENDS============
+.naira{
+    color: #000505;
+
+
+}
+// =====Table Column Titles ENDS=====
