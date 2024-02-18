@@ -1,13 +1,21 @@
 import React, { useState } from 'react';
-import { User } from '../../interfaces';
+import { BarChartData, Transaction, User } from '../../interfaces';
 import Layout from '../../components/_layout/dashboard';
 import Dashboard from '../../screens/charts/dashboardCharts';
 
-const AdminDashboard = () => {
+interface Props {
+  mockTableData: Transaction[];
+  mockBarChartData: BarChartData[];
+}
+
+const AdminDashboard: React.FC<Props> = ({mockBarChartData,mockTableData }) => {
+  // console.log(mockTableData,'mockTableData===mainDash')
+
+// const AdminDashboard = ({mockBarChartData}) => {
   // This is preventing error by providing empty state
   const [selectedOrganization, setSelectedOrganization] = useState('');
   const [searchResults, setSearchResults] = useState<User[]>([]); // Define the state for searchResults
-
+// console.log(mockBarChartData,'mockBarChartData===AdminDashboard')
 
   // State for dummyVariable
   const [dummyVariable, setDummyVariable] = useState<number>(Math.random());
@@ -32,7 +40,7 @@ const AdminDashboard = () => {
       // }}
     >
       <div style={{ marginTop: "40px" }}>
-{/* <Dashboard /> */}
+<Dashboard mockBarChartData={mockBarChartData} mockTableData={mockTableData} />
       </div>
     </Layout>
   );

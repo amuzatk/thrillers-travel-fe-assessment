@@ -1,40 +1,24 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import AnalyticsCard from '../../../components/card/AnalyticsCard'
-import { AnalyticsData, useAnalyticsData } from '../../../utils/sample-data';
-import BarChat from './BarChat';
 import DashboardCharts from '../../charts/dashboardCharts';
-// import DashChartss from '../../charts/dashChartss';
+import { BarChartData, Transaction } from '../../../interfaces';
+interface Props {
+  mockTableData: Transaction[];
+  mockBarChartData: BarChartData[]
+}
 
-  // const GeneralDetails: React.FC<{ userDetails: User }> = ({ userDetails }) => {
-  const GeneralDetails = () => {
-  const [data, setData] = useState<AnalyticsData[]>([]);
-  // const [screenWidth, setScreenWidth] = useState(
-  //   typeof window !== 'undefined' ? window.innerWidth : 0
-  // );
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const analyticsData = await useAnalyticsData();
-      setData(analyticsData);
-    };
-
-    fetchData();
-  // }, [dummyVariable, onForceRerender]);
-}, []);
+const GeneralDetails: React.FC<Props> = ({ mockTableData, mockBarChartData }) => {
 
   return (
     <div 
     // style={{border:"1px solid red"}}
     >
       <AnalyticsCard 
-      // item={{
-      //   image: '',
-      //   title: '',
-      //   amount: ''
-      // }}
+ mockTableData={mockTableData}
        />
        <div>
-        <DashboardCharts />
+        <DashboardCharts
+          mockBarChartData={mockBarChartData} mockTableData={mockTableData}         />
        </div>
     </div>
   )

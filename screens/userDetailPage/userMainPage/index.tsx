@@ -4,9 +4,15 @@ import GeneralDetails from "./generalDetail";
 import TabsComponent from "./tabs/Tabs";
 import TabContentComponent from "./tabs/Content";
 import { Divider } from "antd";
+import { BarChartData, Transaction } from "../../../interfaces";
 
-  // const UserDetailMainPage: React.FC<{ userDetails: User }> = ({ userDetails }) => {
-  const UserDetailMainPage = () => {
+interface Props {
+  mockTableData: Transaction[];
+  mockBarChartData: BarChartData[];
+}
+
+const UserDetailMainPage: React.FC<Props> = ({ mockTableData,mockBarChartData }) => {
+  // const UserDetailMainPage = () => {
 
   const [selectedTabIndex, setSelectedTabIndex] = useState(0);
 
@@ -15,7 +21,10 @@ import { Divider } from "antd";
   };
 
   const tabItems = [
-    { label: 'Online Payments', content: <GeneralDetails /> },
+    { label: 'Online Payments', content: <GeneralDetails    
+    mockTableData={mockTableData}
+    mockBarChartData={mockBarChartData} 
+    /> },
   ];
   
   
