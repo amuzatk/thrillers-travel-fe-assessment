@@ -35,7 +35,7 @@ const NavBar = ({
 
   return (
     <header className={styles.navbar}>
-      {screenWidth <= 820 && (
+      {screenWidth <= 768 && (
         <AiOutlineMenu size={25} onClick={handleOpenMenu} />
       )}
       <a href="/dashboard">

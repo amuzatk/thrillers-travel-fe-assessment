@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import styles from '../../../../styles/dashboard/Tabs.module.scss';
-import { currencyFormatter } from '../../../../helpers';
-import Image from 'next/image';
 
 interface TabsComponentProps {
   items: { label: string; content: React.ReactNode }[];

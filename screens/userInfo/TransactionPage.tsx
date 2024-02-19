@@ -40,13 +40,6 @@ const TransactionPage =() => {
 
   // =========================================
 
-  // useEffect(() => {
-  //   // Retrieve mock data from local storage
-  //   const retrievedMockTableData: Transaction[] = JSON.parse(localStorage.getItem("mockTableData") || "[]");
-  //   setFilteredData(retrievedMockTableData);
-  //   setIsLoading(false);
-  // }, []);
-
   const handleSelectAll = (e: React.ChangeEvent<HTMLInputElement>) => {
     const checked = e.target.checked;
     // Logic to update state for all columns based on checked value

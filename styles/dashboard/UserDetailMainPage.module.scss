@@ -9,22 +9,32 @@
     border-radius: 4px;
     // border: 1px solid green;
 
+    .divide{
+        margin-top: 0;
+        margin-left: 21px;
+        border: 1px solid #EDEDF2;
+    }
+ 
+    }
+    .divide2{
+        display: none;
     }
 
     .content{
-    // border: 1px solid yellow;
-        
-    // margin-top: 49.55px;
-        // margin-left: 57px;
-
-
-        // margin: 49px 74px 158px 56px;
         margin: 25px 74px 158px 10px;
 
+}
 
-        
-        // background-color:$white;
-    // border-radius: 4px;
-    // box-shadow: 3px 5px 20px 0px $boxShadow--1;
+@media only screen and (max-width:768px){
+    .divide2{
+        display: block;
+
+        margin-top: -15px;
+        // margin-left: 21px;
+        border: 1px solid #EDEDF2;
+    }  
+    .divide{
+        display: none;
     }
+}
 }

@@ -1,10 +1,9 @@
 import React, { ReactNode, useEffect, useState } from "react";
 import styles from "../../../styles/layouts/Layout.module.scss";
 import { Drawer } from "antd";
-import { BarChartData, Transaction } from "../../../interfaces";
 import NavBar from "../../shared/navbar";
 import SideBar from "../../shared/sidebar";
-import UserDetailMainPage from "../../../screens/userDetailPage/userMainPage";
+import DashboardInfo from "../../../screens/userDetailPage/userMainPage";
 
 type Props = {
   children?: ReactNode;
@@ -50,24 +49,6 @@ const Layout = ({
     setMainDash(!isDetailPage);
   }, [isDetailPage]);
 
-//   // Save mock data to local storage
-// useEffect(() => {
-//   if (typeof window !== 'undefined') {
-//     localStorage.setItem("mockTableData", JSON.stringify(mockTableData));
-//     localStorage.setItem("mockBarChartData", JSON.stringify(mockBarChartData));
-//   }
-// }, []);
-
-// // Retrieve mock data from local storage
-// const retrievedMockTableData: Transaction[] = typeof window !== 'undefined' ? 
-//   JSON.parse(localStorage.getItem("mockTableData") || "[]") : [];
-// const retrievedMockBarChartData: BarChartData[] = typeof window !== 'undefined' ? 
-//   JSON.parse(localStorage.getItem("mockBarChartData") || "[]") : [];
-
-
-  // console.log(retrievedMockTableData,'retrievedMockTableData')
-  // console.log(retrievedMockBarChartData,'retrievedMockBarChartData')
-
   return (
     <div>
       <NavBar
@@ -78,7 +59,7 @@ const Layout = ({
         <div className={styles.layout}>
           <div className={styles.sidebar}>
             {/* ASIDE MOBILE */}
-            {screenWidth <= 820 && (
+            {screenWidth <= 768 && (
               <Drawer
                 onClose={handleCloseMenu}
                 placement="left"
@@ -110,9 +91,7 @@ const Layout = ({
           >
             {mainDash ? (
               <>
-               <UserDetailMainPage
-                // mockTableData={mockTableData}
-                // mockBarChartData={mockBarChartData}
+               <DashboardInfo
               />
               </>
             ) : null}

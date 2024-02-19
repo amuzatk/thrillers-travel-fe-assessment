@@ -21,6 +21,8 @@
 
 .content{
     width: 100%;
+    // border: 1px solid;
+
 }
 .body{
     // background-color: $white;
@@ -45,3 +47,10 @@
       padding: 66px 0 66px 31px;
     }
   }
+
+//   .mainDashContent {
+//     @media only screen and (max-width: 767px) {
+//       padding: 0;
+//       border: 1px solid red;
+//     }
+//   }
