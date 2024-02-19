@@ -36,15 +36,17 @@ const AnalyticsCard = () => {
 
   return (
     <div className={styles.container}>
+    <div className={styles.main}>
       <div className={styles.left}>
         <p>ACCOUNT DETAILS</p>
         <span className={styles.sterling}>{bankName} </span>
         <h4>{accountNumber} </h4>
-        {/* <span className={styles.sterling}>OGEDENGBE FRUITS STORE </span> */}
+        <span className={styles.store}>OGEDENGBE FRUITS STORE </span>
       </div>
       <div className={styles.right}>
       <Image src={ClipBoard} alt='ClipBoard' width={70} height={28} />
       </div>
+    </div>
     </div>
   );
 };

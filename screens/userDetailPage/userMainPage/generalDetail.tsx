@@ -5,14 +5,13 @@ import DashboardCharts from '../../charts/dashboardCharts';
 const GeneralDetails = () => {
 
   return (
-    <div 
-    >
+    <>
       <AnalyticsCard 
        />
        <div>
         <DashboardCharts />
        </div>
-    </div>
+    </>
   )
 }
 
