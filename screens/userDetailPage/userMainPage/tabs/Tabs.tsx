@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Tab, Tabs, TabList } from 'react-tabs';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import styles from '../../../../styles/dashboard/Tabs.module.scss';
 import { currencyFormatter } from '../../../../helpers';
 import Image from 'next/image';
@@ -26,6 +26,11 @@ const TabsComponent: React.FC<TabsComponentProps> = ({ items, onSelect,}) => {
             </Tab>
           ))}
         </TabList>
+        {/* {items.map((item, index) => (
+          <TabPanel key={index}>
+            {item.content}
+          </TabPanel>
+        ))} */}
       </Tabs>
 
 

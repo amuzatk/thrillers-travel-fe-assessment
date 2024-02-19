@@ -12,30 +12,30 @@ const SelectTemplate: React.FC<SelectTemplateProps> = ({ onChange, selectedOrgan
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [dropdownOpen, setDropdownOpen] = useState<boolean>(false);
 
-  useEffect(() => {
-    // Check if users are already stored in local storage
-    const storedUsers = localStorage.getItem('users');
+  // useEffect(() => {
+  //   // Check if users are already stored in local storage
+  //   const storedUsers = localStorage.getItem('users');
 
-    if (storedUsers) {
-      const parsedUsers = JSON.parse(storedUsers);
-      console.log(parsedUsers, 'parsedUsers ==> From localStorage');
-    } else {
-    }
-  }, []);
+  //   if (storedUsers) {
+  //     const parsedUsers = JSON.parse(storedUsers);
+  //     console.log(parsedUsers, 'parsedUsers ==> From localStorage');
+  //   } else {
+  //   }
+  // }, []);
 
-  const handleSelectChange = (selectedValue: string) => {
-    // Check if "Switch Organization" is selected
-    if (selectedValue === 'Switch Organization') {
-      // If "Switch Organization" is selected, set the selected organization to an empty string or a default value
-      onChange('');
-    } else {
-      // Otherwise, pass the selected value to the parent component
-      onChange(selectedValue);
-    }
+  // const handleSelectChange = (selectedValue: string) => {
+  //   // Check if "Switch Organization" is selected
+  //   if (selectedValue === 'Switch Organization') {
+  //     // If "Switch Organization" is selected, set the selected organization to an empty string or a default value
+  //     onChange('');
+  //   } else {
+  //     // Otherwise, pass the selected value to the parent component
+  //     onChange(selectedValue);
+  //   }
 
-    // Close the dropdown
-    setDropdownOpen(false);
-  };
+  //   // Close the dropdown
+  //   setDropdownOpen(false);
+  // };
 
   const inputStyle = {
     border: 'none',
@@ -58,7 +58,7 @@ const SelectTemplate: React.FC<SelectTemplateProps> = ({ onChange, selectedOrgan
       <input
   type="text"
   placeholder="Switch Organization"
-  value={searchTerm}
+  // value={searchTerm}
   // onChange={handleInputChange}
   style={inputStyle}
   className={styles.placehold}
@@ -91,7 +91,7 @@ const SelectTemplate: React.FC<SelectTemplateProps> = ({ onChange, selectedOrgan
         >
           <li>
             <button
-              onClick={() => handleSelectChange('Switch Organization')}
+              // onClick={() => handleSelectChange('Switch Organization')}
               style={{
                 background: 'none',
                 border: 'none',

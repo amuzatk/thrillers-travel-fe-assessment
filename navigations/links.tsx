@@ -11,7 +11,6 @@ import {
   export const DASHBOARD_LINKS = [
     {
       TITLE: 'Dashboard',
-      // LINK: '/vendor/[vendorId]',
       LINK: '/dashboard',
       SLUG: 'dashboard',
       ISDASHBOARD: true,

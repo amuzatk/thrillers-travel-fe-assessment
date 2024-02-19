@@ -7,13 +7,13 @@ fill={isActive ? 'none' : '#04004D'}
 xmlns="http://www.w3.org/2000/svg">
 <path d="M10.5 19.9V4.1C10.5 2.6 9.86 2 8.27 2H4.23C2.64 2 2 2.6 2 4.1V19.9C2 21.4 2.64 22 4.23 22H8.27C9.86 22 10.5 21.4 10.5 19.9Z" 
 stroke="white" 
-stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
 <path d="M22 10.9V4.1C22 2.6 21.36 2 19.77 2H15.73C14.14 2 13.5 2.6 13.5 4.1V10.9C13.5 12.4 14.14 13 15.73 13H19.77C21.36 13 22 12.4 22 10.9Z" 
 stroke="white"
- stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+ strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
 <path d="M22 19.9V18.1C22 16.6 21.36 16 19.77 16H15.73C14.14 16 13.5 16.6 13.5 18.1V19.9C13.5 21.4 14.14 22 15.73 22H19.77C21.36 22 22 21.4 22 19.9Z" 
 stroke="white"
- stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+ strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
 </svg>
     );
 
@@ -27,33 +27,33 @@ fill={isActive ? 'none' : 'none'}
 // stroke="#04004D"
 // stroke="white" 
 stroke={!isActive ? '#04004D' : 'white'} // Outline color
- stroke-width="1.5" 
- stroke-linecap="round" 
- stroke-linejoin="round"
+ strokeWidth="1.5" 
+ strokeLinecap="round" 
+ strokeLinejoin="round"
  />
 <path d="M2.5 12.4101V7.8401C2.5 6.6501 3.23 5.59006 4.34 5.17006L12.28 2.17006C13.52 1.70006 14.85 2.62009 14.85 3.95009V7.75008" 
 // stroke="#04004D"
 // stroke="white" 
 stroke={!isActive ? '#04004D' : 'white'} // Outline color
- stroke-width="1.5" 
- stroke-linecap="round" 
- stroke-linejoin="round"
+ strokeWidth="1.5" 
+ strokeLinecap="round" 
+ strokeLinejoin="round"
  />
 <path d="M22.5588 13.9702V16.0302C22.5588 16.5802 22.1188 17.0302 21.5588 17.0502H19.5988C18.5188 17.0502 17.5288 16.2602 17.4388 15.1802C17.3788 14.5502 17.6188 13.9602 18.0388 13.5502C18.4088 13.1702 18.9188 12.9502 19.4788 12.9502H21.5588C22.1188 12.9702 22.5588 13.4202 22.5588 13.9702Z" 
 // stroke="#04004D"
 // stroke="white" 
 stroke={!isActive ? '#04004D' : 'white'} // Outline color
- stroke-width="1.5" 
- stroke-linecap="round" 
- stroke-linejoin="round"
+ strokeWidth="1.5" 
+ strokeLinecap="round" 
+ strokeLinejoin="round"
  />
 <path d="M7 12H14" 
 // stroke="#04004D"
 // stroke="white" 
 stroke={!isActive ? '#04004D' : 'white'} // Outline color
- stroke-width="1.5" 
- stroke-linecap="round" 
- stroke-linejoin="round"
+ strokeWidth="1.5" 
+ strokeLinecap="round" 
+ strokeLinejoin="round"
  />
 </svg>
     );
@@ -67,9 +67,9 @@ fill={isActive ? 'none' : 'none'}
 //  stroke="#23262F" 
 // stroke="white" 
 stroke={!isActive ? '#04004D' : 'white'} // Outline color
-stroke-width="1.5" 
-stroke-linecap="round" 
-stroke-linejoin="round"
+strokeWidth="1.5" 
+strokeLinecap="round" 
+strokeLinejoin="round"
 />
 </svg>
   );
@@ -81,23 +81,23 @@ fill={isActive ? 'none' : 'none'}
 <path d="M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z" 
 //  stroke="#292D32" 
 stroke={!isActive ? '#04004D' : 'white'} // Outline color
- stroke-width="1.5" 
- stroke-linecap="round" 
- stroke-linejoin="round"
+ strokeWidth="1.5" 
+ strokeLinecap="round" 
+ strokeLinejoin="round"
  />
 <path d="M15.75 9H8.25" 
 // stroke="#292D32" 
 stroke={!isActive ? '#04004D' : 'white'} // Outline color
-stroke-width="1.5" 
-stroke-linecap="round" 
-stroke-linejoin="round"
+strokeWidth="1.5" 
+strokeLinecap="round" 
+strokeLinejoin="round"
 />
 <path d="M15.75 15H8.25" 
 // stroke="#292D32" 
 stroke={!isActive ? '#04004D' : 'white'} // Outline color
-stroke-width="1.5" 
-stroke-linecap="round" 
-stroke-linejoin="round"
+strokeWidth="1.5" 
+strokeLinecap="round" 
+strokeLinejoin="round"
 />
 </svg>
   );
@@ -111,18 +111,18 @@ xmlns="http://www.w3.org/2000/svg">
 // stroke="#292D32" 
 stroke={!isActive ? '#04004D' : 'white'} // Outline color
 
-stroke-width="1.5" 
-stroke-miterlimit="10" 
-stroke-linecap="round" 
-stroke-linejoin="round"
+strokeWidth="1.5" 
+strokeMiterlimit="10" 
+strokeLinecap="round" 
+strokeLinejoin="round"
 />
 <path d="M2 12.8801V11.1201C2 10.0801 2.85 9.22006 3.9 9.22006C5.71 9.22006 6.45 7.94006 5.54 6.37006C5.02 5.47006 5.33 4.30006 6.24 3.78006L7.97 2.79006C8.76 2.32006 9.78 2.60006 10.25 3.39006L10.36 3.58006C11.26 5.15006 12.74 5.15006 13.65 3.58006L13.76 3.39006C14.23 2.60006 15.25 2.32006 16.04 2.79006L17.77 3.78006C18.68 4.30006 18.99 5.47006 18.47 6.37006C17.56 7.94006 18.3 9.22006 20.11 9.22006C21.15 9.22006 22.01 10.0701 22.01 11.1201V12.8801C22.01 13.9201 21.16 14.7801 20.11 14.7801C18.3 14.7801 17.56 16.0601 18.47 17.6301C18.99 18.5401 18.68 19.7001 17.77 20.2201L16.04 21.2101C15.25 21.6801 14.23 21.4001 13.76 20.6101L13.65 20.4201C12.75 18.8501 11.27 18.8501 10.36 20.4201L10.25 20.6101C9.78 21.4001 8.76 21.6801 7.97 21.2101L6.24 20.2201C5.33 19.7001 5.02 18.5301 5.54 17.6301C6.45 16.0601 5.71 14.7801 3.9 14.7801C2.85 14.7801 2 13.9201 2 12.8801Z" 
 // stroke="#292D32" 
 stroke={!isActive ? '#04004D' : 'white'} // Outline color
-stroke-width="1.5" 
-stroke-miterlimit="10" 
-stroke-linecap="round" 
-stroke-linejoin="round"
+strokeWidth="1.5" 
+strokeMiterlimit="10" 
+strokeLinecap="round" 
+strokeLinejoin="round"
 />
 </svg>
   );

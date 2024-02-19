@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
-import { BarChartData, Transaction } from '../../interfaces';
+import React from 'react';
 import Layout from '../../components/_layout/dashboard';
 import Dashboard from '../../screens/charts/dashboardCharts';
 
-
-const AdminDashboard = () => {
+export default function AdminDashboard() {
+// const AdminDashboard = () => {
 
 
   return (
@@ -12,10 +11,16 @@ const AdminDashboard = () => {
       isDetailPage={false}
     >
       <div style={{ marginTop: "40px" }}>
-<Dashboard  />
+{/* <Dashboard  /> */}
       </div>
     </Layout>
   );
 };
 
-export default AdminDashboard;
+// export default AdminDashboard;
+
+// import React from 'react';
+
+// export default function Dashboard() {
+//   return <div>This is the dashboard page</div>;
+// }

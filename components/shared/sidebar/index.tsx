@@ -1,12 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "../../../styles/dashboard/Sidebar.module.scss";
 import GlobeIcon from "../../../public/assets/icons/globeIcon.png";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from 'next/router';
-import { Divider } from "antd";
 import SelectTemplate from "../form/SelectTemplate";
-import { toastHandler } from "../../../helpers/toastHandler";
+// import { toastHandler } from "../../../helpers/toastHandler";
 import { DASHBOARD_LINKS } from "../../../navigations";
 
 interface LinkItem {
@@ -31,13 +30,13 @@ const SideBar = ({ selectedOrganization, onOrganizationChange }: SideBarProps) =
   // const [sideNav] = useState(true);
   const router = useRouter();
 
-  const onLogout = () => {
-    // Display a success message
-    toastHandler.success('Logout successful');
+  // const onLogout = () => {
+  //   // Display a success message
+  //   toastHandler.success('Logout successful');
 
-    // Redirect to login or any desired page
-    router.push('/');
-  };
+  //   // Redirect to login or any desired page
+  //   router.push('/');
+  // };
 
   // Group links based on their categories
   const dashboardLinks = DASHBOARD_LINKS.filter((link: LinkItem) => link.ISDASHBOARD);

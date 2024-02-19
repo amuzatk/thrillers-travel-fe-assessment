@@ -40,12 +40,12 @@ const TransactionPage =() => {
 
   // =========================================
 
-  useEffect(() => {
-    // Retrieve mock data from local storage
-    const retrievedMockTableData: Transaction[] = JSON.parse(localStorage.getItem("mockTableData") || "[]");
-    setFilteredData(retrievedMockTableData);
-    setIsLoading(false);
-  }, []);
+  // useEffect(() => {
+  //   // Retrieve mock data from local storage
+  //   const retrievedMockTableData: Transaction[] = JSON.parse(localStorage.getItem("mockTableData") || "[]");
+  //   setFilteredData(retrievedMockTableData);
+  //   setIsLoading(false);
+  // }, []);
 
   const handleSelectAll = (e: React.ChangeEvent<HTMLInputElement>) => {
     const checked = e.target.checked;

@@ -5,7 +5,6 @@ import { BarChartData, Transaction } from "../../../interfaces";
 import NavBar from "../../shared/navbar";
 import SideBar from "../../shared/sidebar";
 import UserDetailMainPage from "../../../screens/userDetailPage/userMainPage";
-import { mockBarChartData, mockTableData, } from "../../../features/users/dummyData";
 
 type Props = {
   children?: ReactNode;
@@ -51,19 +50,19 @@ const Layout = ({
     setMainDash(!isDetailPage);
   }, [isDetailPage]);
 
-  // Save mock data to local storage
-useEffect(() => {
-  if (typeof window !== 'undefined') {
-    localStorage.setItem("mockTableData", JSON.stringify(mockTableData));
-    localStorage.setItem("mockBarChartData", JSON.stringify(mockBarChartData));
-  }
-}, []);
+//   // Save mock data to local storage
+// useEffect(() => {
+//   if (typeof window !== 'undefined') {
+//     localStorage.setItem("mockTableData", JSON.stringify(mockTableData));
+//     localStorage.setItem("mockBarChartData", JSON.stringify(mockBarChartData));
+//   }
+// }, []);
 
-// Retrieve mock data from local storage
-const retrievedMockTableData: Transaction[] = typeof window !== 'undefined' ? 
-  JSON.parse(localStorage.getItem("mockTableData") || "[]") : [];
-const retrievedMockBarChartData: BarChartData[] = typeof window !== 'undefined' ? 
-  JSON.parse(localStorage.getItem("mockBarChartData") || "[]") : [];
+// // Retrieve mock data from local storage
+// const retrievedMockTableData: Transaction[] = typeof window !== 'undefined' ? 
+//   JSON.parse(localStorage.getItem("mockTableData") || "[]") : [];
+// const retrievedMockBarChartData: BarChartData[] = typeof window !== 'undefined' ? 
+//   JSON.parse(localStorage.getItem("mockBarChartData") || "[]") : [];
 
 
   // console.log(retrievedMockTableData,'retrievedMockTableData')
@@ -112,8 +111,8 @@ const retrievedMockBarChartData: BarChartData[] = typeof window !== 'undefined' 
             {mainDash ? (
               <>
                <UserDetailMainPage
-                mockTableData={mockTableData}
-                mockBarChartData={mockBarChartData}
+                // mockTableData={mockTableData}
+                // mockBarChartData={mockBarChartData}
               />
               </>
             ) : null}
@@ -121,8 +120,8 @@ const retrievedMockBarChartData: BarChartData[] = typeof window !== 'undefined' 
             <div className={styles.body}>
               {React.Children.map(children, (child) => {
                 return React.cloneElement(child as React.ReactElement, {
-                  mockTableData: retrievedMockTableData,
-                  mockBarChartData: retrievedMockBarChartData,
+                  // mockTableData: retrievedMockTableData,
+                  // mockBarChartData: retrievedMockBarChartData,
                 });
               })}
             </div>

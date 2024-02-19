@@ -9,25 +9,26 @@ import { RootState } from '../../store';
 import { useAppDispatch } from '../../store/hooks';
 
 const DashboardCharts = () => {
-  // ==========================================================
-  const dispatch = useAppDispatch();
-  const {  barChartData, transactionStatus, barChartDataStatus, error } = useSelector((state: RootState) => state.posts);
-  useEffect(() => {
-    dispatch(fetchTransactions());
-    dispatch(fetchBarChartData());
-  }, [dispatch]);
-
-  if (transactionStatus === 'loading' || barChartDataStatus === 'loading') {
-    return <div>Loading...</div>;
-  }
-
-  if (transactionStatus === 'failed' || barChartDataStatus === 'failed') {
-    return <div>Error: {error}</div>;
-  }
-
-
-// =======================================================
   const [selectedData, setSelectedData] = useState<string>('Last 7 days');
+
+    // ==========================================================
+    const dispatch = useAppDispatch();
+    const {  barChartData, transactionStatus, barChartDataStatus, error } = useSelector((state: RootState) => state.posts);
+    useEffect(() => {
+      dispatch(fetchTransactions());
+      dispatch(fetchBarChartData());
+    }, [dispatch]);
+  
+    if (transactionStatus === 'loading' || barChartDataStatus === 'loading') {
+      return <div>Loading...</div>;
+    }
+  
+    if (transactionStatus === 'failed' || barChartDataStatus === 'failed') {
+      return <div>Error: {error}</div>;
+    }
+  
+  
+  // =======================================================
 
   const getChartData = () => {
     let filteredData;
@@ -73,6 +74,7 @@ const DashboardCharts = () => {
         </div>
         <ResponsiveContainer style={{ overflowY: "hidden", overflowX: "hidden" }} className={styles.chart} width="100%" height={209.51}>
           <BarChart data={getChartData()}>
+          {/* <BarChart > */}
             <XAxis dataKey="day" />
             <YAxis interval={0} tickCount={5} />
             <Tooltip />
