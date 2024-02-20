@@ -42,4 +42,16 @@
         display: none;
     }
 }
+
+// @media only screen and (max-width:375px){
+// .main{
+//     border: 1px solid red;
+// }
+// }
 }
+@media only screen and (max-width:375px){
+    .main{
+        margin-top: -70px;
+        // border: 1px solid red;
+    }
+    }

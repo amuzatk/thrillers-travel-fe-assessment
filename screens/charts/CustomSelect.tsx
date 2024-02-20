@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Select } from 'antd';
-// import styles from '../../styles/dashboard/Charts.module.scss';
 import styles from '../../styles/dashboard/Charts.module.scss';
 
 const { Option } = Select;

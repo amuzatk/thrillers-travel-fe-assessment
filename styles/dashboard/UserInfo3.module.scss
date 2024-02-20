@@ -19,60 +19,41 @@
         }
     }
 
+
 }
 
-// =========Table Filter Form STARTS============
-.formContainer{
-    padding: 30px 20px;
-    position: absolute;
-    top: 46px;
-    left: -4px;
-    background-color: $white;
-    z-index: 999;
-    width: 210px;
-height: 616px;
-border-radius: 4px;
-border: 1px solid rgba(84, 95, 125, 0.14)
-}
-
-.forWrapper{
-
-    input{
-        height: 40px;
-    }
-
-    .selet{
-        height: 40px;
-    }
-
-    .buttons{
-display: flex;
-flex-direction: row;
-justify-content: flex-start;
-gap: 14px;
-
-.reset, .filter{
-width: 90px;
-height: 40px;
-border-radius: 8px;
-border: 1px solid $color--1;
-font-size: 14px;
+.header{
+    width: 326px;
+    // height: 198px;
+    // margin: 0px auto 0px auto;
+margin: 40px auto 0px auto;
+    // top: 234px;
+    // left: 24px;
+    // gap: 9px;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
+h1{
+    //styleName: Text LG/Bold;
+// font-family: Inter;
+align-self: start;
+font-size: 17px;
 font-weight: 600;
-line-height: 16px;
+line-height: 26px;
 letter-spacing: 0em;
-text-align: center;
+// text-align: left;
+color: #111827;
+// color: red;
+
 }
-.filter{
-color: $white;
-background-color: $backgroundColor;
-border: 1px solid $backgroundColor;
 }
+@media only screen and (max-width:768px){
+    .wrapper{
+        // border: 1px solid red;
+        display: none;
     }
-}
-// =========Table Filter Form ENDS============
-
-
-
+        }
 
 //   =====Table Column Titles STARTS=====
 .columnTitle {

@@ -66,13 +66,17 @@ const DashboardCharts = () => {
           <div className={styles.upper}>
             <h5>Revenue</h5>
             <p><span> +0.00% </span> vs {selectedData} </p>
+            <div className={styles.mobile}>
+          <CustomSelect onChange={handleSelectChange}/>
+          </div>
           </div>
           <div className={styles.lower}>
             <h2>₦{totalDelivered.toFixed(2)}</h2>
             <p>in total value</p>
           </div>
         </div>
-        <ResponsiveContainer style={{ overflowY: "hidden", overflowX: "hidden" }} className={styles.chart} width="100%" height={209.51}>
+        {/* <ResponsiveContainer style={{ overflowY: "hidden", overflowX: "hidden" }} className={styles.chart} width="100%" height={209.51}> */}
+        <ResponsiveContainer className={styles.chart} width="100%" height={209.51}>
           <BarChart data={getChartData()}>
           {/* <BarChart > */}
             <XAxis dataKey="day" />

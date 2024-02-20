@@ -4,9 +4,11 @@
   border-radius: 5px;
   margin-top: 40px;
   overflow-y: hidden;
+  // overflow-x: scroll;
+
 
   // width: 1047px;
-  width: 1020px;
+  // width: 1020px;
 height: 491px;
 // top: 376px;
 // left: 319px;
@@ -85,7 +87,7 @@ align-items: center;
   .charts{
     border: 1px solid #E4E4E7;
     // border: 1px solid red;
-    overflow-y: hidden;
+   
 
     // background: linear-gradient(0deg, #E4E4E7, #E4E4E7),
     // linear-gradient(0deg, #FFFFFF, #FFFFFF);
@@ -116,6 +118,9 @@ padding: 25px 28px;
         justify-content: flex-start;
         align-items: center;
         gap: 12px;
+  // overflow-x: hidden;
+  overflow-y: hidden;
+
 
         h5{
           // font-family: Inter;
@@ -144,6 +149,15 @@ line-height: 35px;
 letter-spacing: 0em;
 color: #424242;
 }
+
+// .mobile{
+//   // display: none;
+//   // visibility: hidden;
+//   // width: 0;
+//   // height: 0;
+//   // width: 100px;
+//   // height: 34px;
+// }
       }
 
       .lower p{
@@ -155,11 +169,73 @@ color: #424242;
       }
 
     }
-    // .chart{
-    //   // border: 1px solid green;
-    // }
+    .chart{
+      // border: 1px solid green;
+      overflow-y: hidden;
+      // overflow-x: hidden;
+      // width: 50%;
+    }
+  }
+ 
+}
+@media only screen and (max-width:768px){
+  .container{
+    border: none;
+
+    // width: 336px;
+    width: 100%;
+// height: 279px;
+// top: 325px;
+// left: 20px;
+border-radius: 8px;
+// border: 1px;
+// border: 1px solid red;
+// border-radius: 5px;
+margin-top: 0px;
+
+.top{
+  display: none;
+}
+  }
+
+  .charts{
+    // border: 1px solid red;
+.text{
+  .upper{
+    position: relative;
+    // border: 1px solid red;
+    p{
+      display: none;
+    }
+
+    h5{
+font-size: 17px;
+font-weight: 500;
+line-height: 26px;
+letter-spacing: 0em;
+color: #292D32;
+
+
+    }
+    .mobile{
+      // display: inline-block;
+      // visibility: visible;
+      width: 100px;
+      // height: 25px;
+      // height: 34px;
+      position: absolute;
+      right: 0;
+    }
+  }
+  .lower{
+    h2, p{
+    display: none;
+  }
   }
 }
+  }
+}
+
 
 ////// for select dropdown ///////
 .selet{
@@ -172,4 +248,22 @@ padding: 10px, 16px, 10px, 16px;
 // border: 1px solid #DADAE7;
 gap: 24px;
 
+@media only screen and (max-width:768px){
+  // border: 1px solid red;
+border: 1px solid #C4C8D3;
+
+
+  width: 100px;
+// height: 25px;
+height: 34px;
+border-radius: 30px;
+// top: 16px;
+// left: 236px;
+// border: 1px;
+
+
 }
+
+}
+
+

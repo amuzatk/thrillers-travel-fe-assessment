@@ -3,7 +3,9 @@
 .main{
     height: 100%;
     width: 100%;
-    background-color: $backgroundColor--3;
+    // border: 1px solid red;
+    // background-color: $backgroundColor--3;
+    // background: yellow;
 }
 .layout{
     display: flex;
@@ -27,6 +29,7 @@
 .body{
     // background-color: $white;
     background-color: #fbfbfb;
+    // background-color: lightblue;
 }
 @media only screen and (max-width: 1220px){
     .main{
@@ -53,4 +56,12 @@
       padding: 0;
     //   border: 1px solid red;
     }
+  }
+
+
+
+@media only screen and (max-width: 768px) {
+  .body{
+    background-color: $white;
+}
   }

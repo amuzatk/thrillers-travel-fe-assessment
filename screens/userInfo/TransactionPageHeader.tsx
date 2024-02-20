@@ -17,6 +17,7 @@ const TransactionPageHeader = () => {
         cursor:'pointer'
       };
   return (
+    <div className={styles.wrapper}>
     <div className={styles.container}>
         <div 
         className={styles.left}
@@ -41,23 +42,48 @@ const TransactionPageHeader = () => {
       />
 
         </div>
+
         <div className={styles.right}>
             <p>Select Date range:</p>
             <div className={styles.picker}>
             <Image src={Calendar} alt='Calendar' width={20} height={20} />
             <span>June 6, 2023 - Jun 15, 2023</span>
             {/* <input className={styles.picker} type="text" /> */}
-            
            
-
             </div>
             <div className={styles.export}>
             <Image src={ExportIcon} alt='ExportIcon' width={20} height={20} />
             <span> Export</span>
             </div>
-
         </div>
+    </div>
 
+    <div className={styles.mobileWrapper}>
+      <h1>hojhj;lckmdkkukuoileifjlwfkjiljejvnjdhggdghgwrwrrewfrwfrssfdfslfhrfjhfudjolfjdjk</h1>
+     <div 
+        className={styles.mobileTop}>
+          <div className={styles.topLeft}>
+     <input 
+     type="text"
+    //  style={inputStyle}
+     placeholder="All Accounts"
+      />
+     <DownOutlined />
+</div>
+<div className={styles.export}>
+            <Image src={ExportIcon} alt='ExportIcon' width={20} height={20} />
+            <span> Export</span>
+            </div>
+        </div>
+        <div className={styles.mobileBottom}>
+            <p>Select Date range:</p>
+            <div className={styles.picker}>
+            <Image src={Calendar} alt='Calendar' width={20} height={20} />
+            <span>June 6, 2023 - Jun 15, 2023</span>
+           
+            </div>     
+        </div>
+        </div>
     </div>
   )
 }

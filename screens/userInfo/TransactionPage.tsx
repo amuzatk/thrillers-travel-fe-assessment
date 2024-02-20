@@ -9,6 +9,7 @@ import { useSelector } from 'react-redux';
 import { fetchTransactions, fetchBarChartData } from '../../store/postSlice';
 import { RootState } from '../../store';
 import { useAppDispatch } from '../../store/hooks';
+import TransactionCard from "./TransactionCard";
 
 const TransactionPage =() => {
   const [filteredData, setFilteredData] = useState<Transaction[]>([]);
@@ -155,7 +156,7 @@ const columns = [
 ];
 
   return (
-    <>
+    <>    <div className={styles.wrapper}>
       <div className={styles.container}>
         <Table dataSource={realData} columns={columns} pagination={false} />
       </div>
@@ -167,6 +168,11 @@ const columns = [
           onChange={handlePageChange}
         />
       </div>
+    </div>
+    <div className={styles.header}>
+      <h1>Transaction</h1>
+    </div>
+    <TransactionCard/>
     </>
   );
 };
