@@ -65,7 +65,6 @@ const TransactionPageHeader = () => {
           <div className={styles.topLeft}>
      <input 
      type="text"
-    //  style={inputStyle}
      placeholder="All Accounts"
       />
      <DownOutlined />

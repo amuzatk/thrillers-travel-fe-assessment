@@ -1,22 +1,9 @@
 .container{
   border: 1px solid #E4E4E7;
-  // border: 1px solid red;
   border-radius: 5px;
   margin-top: 40px;
   overflow-y: hidden;
-  // overflow-x: scroll;
-
-
-  // width: 1047px;
-  // width: 1020px;
 height: 491px;
-// top: 376px;
-// left: 319px;
-// border: 1px;
-// background: linear-gradient(0deg, #E4E4E7, #E4E4E7),
-// linear-gradient(0deg, #FAFAFA, #FAFAFA);
-
-
 
   .top{
     // border: 1px solid rgb(13, 0, 128);
@@ -87,23 +74,11 @@ align-items: center;
   .charts{
     border: 1px solid #E4E4E7;
     // border: 1px solid red;
-   
-
-    // background: linear-gradient(0deg, #E4E4E7, #E4E4E7),
-    // linear-gradient(0deg, #FFFFFF, #FFFFFF);
     background: #FFFFFF;
-    // max-width: 932.98px;
-    // width: 987px;
 height: 369px;
-// top: 468px;
-// left: 349px;
 border-radius: 6px;
-// margin: 30px;
 margin:30px 30px 30px 30px ;
 padding: 25px 28px;
-
-
-    
 
     .text{
       // border: 1px solid rgb(222, 230, 209);
@@ -118,9 +93,7 @@ padding: 25px 28px;
         justify-content: flex-start;
         align-items: center;
         gap: 12px;
-  // overflow-x: hidden;
   overflow-y: hidden;
-
 
         h5{
           // font-family: Inter;
@@ -231,6 +204,19 @@ color: #292D32;
     h2, p{
     display: none;
   }
+  }
+}
+  }
+}
+
+
+@media only screen and (min-width:769px){
+  .charts{
+.text{
+  .upper{
+    .mobile{
+      display: none;
+    }
   }
 }
   }

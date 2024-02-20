@@ -7,8 +7,6 @@
     align-items: center;
     padding: 36px ;
   overflow-y: hidden;
-
-
     // box-shadow: 3px 5px 20px 0px $boxShadow--1;
     border-bottom:1px solid #E6EAEE;
     position: fixed;
@@ -16,9 +14,9 @@
     left: 0;
     top: 0;
     z-index: 1000;
-    background-color: $white;
+    // background-color: $white;
+    background-color: #fbfbfb;
     // background: #E6EAEE;
-
 }
 
 .menu{
@@ -84,44 +82,25 @@ color: $color--2;
     padding: 0px, 0px, 0px, 0px;
 }
 
-.search {
-    // border: 1px solid red;
+.backContainer{
+    // border:1px solid red;
+    margin-bottom: -70px;
     display: flex;
     flex-direction: row;
-    justify-content: center;
     align-items: center;
-border-radius: 8px;
-max-width: 400px;
-height: 40px;
-border: 1px solid $border--1;
-}
-
-.search input{
-    min-width: 300px;
-height: 38px;
-border-bottom-left-radius: 8px;
-border-top-left-radius: 8px;
-border: none;
-// font-family: Work Sans;
-font-size: 14px;
-font-weight: 400;
-line-height: 16px;
+    gap: 24px;
+    // border-bottom: 1px solid #EDEDF2;
+height: 94px;
+padding-left: 24px;
+    p{
+font-size: 15px;
+font-weight: 600;
+line-height: 23px;
 letter-spacing: 0em;
-padding-left: 16px;
+color: #000000;
+    }
 }
 
-.icon{
-    min-width: 56px;
-height: 40px;
-background: $backgroundColor;
-border: 1px solid $backgroundColor;
-border-bottom-right-radius: 8px;
-border-top-right-radius: 8px;
-display: flex;
-justify-content: center;
-color: $white;
-align-items: center;
-}
 
 @media only screen and (max-width: 768px){
 
@@ -179,38 +158,10 @@ align-items: center;
 
 @media only screen and (max-width: 575px){
 
-    .search input{
-    //  border: 1px solid green;    
-            min-width: 20px;
-        height: 28px;
-        border-bottom-left-radius: 8px;
-        border-top-left-radius: 8px;        
-        // font-family: Work Sans;
-        font-size: 14px;
-        font-weight: 300;
-        line-height: 12px;
-        letter-spacing: 0em;
-        padding-left: 5px;
-        }
-
-.search{
-    min-width: 20px;
-    // border: 1px solid red;
-    max-width: 10%;
-    margin-right: 40px;
-    .input .web{
-    display: none;
-
+    .backContainer{
+        // border:1px solid red;
+        margin-bottom: -75px;
     }
-    .input .mobile{
-        max-width: 10%;
-    margin-right: -153px;
-    border-radius: 40%;
-        }
-    .icon{
-        display: none;
-    }
-}
 
 }
 @media only screen and (min-width: 576px){

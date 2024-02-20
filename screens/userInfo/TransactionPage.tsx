@@ -19,8 +19,6 @@ const TransactionPage =() => {
   const [isError, setIsError] = useState(false);
   const [selectAll, setSelectAll] = useState<boolean>(false);
 
-  // ========================================
-
   const dispatch = useAppDispatch();
   const { transactions, transactionStatus, barChartDataStatus, error } = useSelector((state: RootState) => state.posts);
 
@@ -38,8 +36,6 @@ const TransactionPage =() => {
   if (transactionStatus === 'failed' || barChartDataStatus === 'failed') {
     return <div>Error: {error}</div>;
   }
-
-  // =========================================
 
   const handleSelectAll = (e: React.ChangeEvent<HTMLInputElement>) => {
     const checked = e.target.checked;
@@ -126,10 +122,9 @@ const columns = [
                     color: "#E4033B",
                     background: "#FEECEE",
                     borderRadius: "100px",
-                    padding: "4px 12px",
+                    padding: "4px 25px",
                     height: "30px",
-                    width: "106px",
-
+                    maxWidth:"100px",
                     border: "1px solid #F14156"
                 };
             } else if (status === "Processed") {
@@ -137,10 +132,11 @@ const columns = [
                     color: "#144909",
                     border: "1px solid #5DC090",
                     borderRadius: "100px",
-                    padding: "4px 12px",
+                    padding: "4px 10px",
                     background: "#EFFDED",
                     height: "30px",
-                    width: "106px",
+                    maxWidth:"100px",
+
 
                 };
             }
@@ -170,7 +166,7 @@ const columns = [
       </div>
     </div>
     <div className={styles.header}>
-      <h1>Transaction</h1>
+      <h1>Transactions</h1>
     </div>
     <TransactionCard/>
     </>

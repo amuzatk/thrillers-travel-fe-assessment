@@ -9,7 +9,7 @@ interface CustomSelectProps {
 }
 
 const CustomSelect: React.FC<CustomSelectProps> = ({ onChange }) => {
-  const [pageSize, setPageSize] = useState<string>('Today'); // Default value for the select
+  const [pageSize, setPageSize] = useState<string>('Last 7 days'); // Default value for the select
 
   const handlePageSizeChange = (value: string) => {
     setPageSize(value); // Update the selected value
