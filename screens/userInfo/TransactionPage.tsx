@@ -6,7 +6,7 @@ import Paginate from "./pagination";
 import {  Transaction } from "../../interfaces";
 
 import { useSelector } from 'react-redux';
-import { fetchTransactions, fetchBarChartData } from '../../store/postSlice';
+import { fetchTransactions } from '../../store/postSlice';
 import { RootState } from '../../store';
 import { useAppDispatch } from '../../store/hooks';
 import TransactionCard from "./TransactionCard";
@@ -20,11 +20,10 @@ const TransactionPage =() => {
   const [selectAll, setSelectAll] = useState<boolean>(false);
 
   const dispatch = useAppDispatch();
-  const { transactions, transactionStatus, barChartDataStatus, error } = useSelector((state: RootState) => state.posts);
+  const { transactions, transactionStatus, barChartDataStatus, error } = useSelector((state: RootState) => state.data);
 
   useEffect(() => {
     dispatch(fetchTransactions());
-    // dispatch(fetchBarChartData());
     setFilteredData(transactions);
     setIsLoading(false);
   }, [dispatch]);

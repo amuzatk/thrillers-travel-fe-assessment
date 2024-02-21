@@ -1,6 +1,5 @@
 import React from 'react'
 import styles from '../../styles/dashboard/TransactionCard.module.scss'
-import CardDivider from './Divider'
 
 const TransactionCard = () => {
   return (

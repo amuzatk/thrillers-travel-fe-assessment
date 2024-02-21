@@ -20,7 +20,4 @@ export type Transaction = {
     barChartData: BarChartData[];
   };
   
-//   type MockDataResponse = {
-//     data: Data;
-//   };
   

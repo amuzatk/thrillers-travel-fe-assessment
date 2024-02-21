@@ -10,9 +10,8 @@ import { useAppDispatch } from '../../store/hooks';
 
 const AnalyticsCard = () => {
 
-  // ==================================
   const dispatch = useAppDispatch();
-  const { transactions, transactionStatus, barChartDataStatus, error } = useSelector((state: RootState) => state.posts);
+  const { transactions, transactionStatus, barChartDataStatus, error } = useSelector((state: RootState) => state.data);
 
   useEffect(() => {
     dispatch(fetchTransactions());
@@ -26,9 +25,6 @@ const AnalyticsCard = () => {
   if (transactionStatus === 'failed' || barChartDataStatus === 'failed') {
     return <div>Error: {error}</div>;
   }
-
-
-  // ==================================
 
   const bankName = transactions[0]?.bankName;
   const accountNumber = transactions[0]?.accountNumber;

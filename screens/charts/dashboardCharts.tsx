@@ -14,7 +14,7 @@ const DashboardCharts = () => {
   const [mobileSelectedData, setMobileSelectedData] = useState<string>('Weekly');
 
   const dispatch = useAppDispatch();
-  const { barChartData, transactionStatus, barChartDataStatus, error } = useSelector((state: RootState) => state.posts);
+  const { barChartData, transactionStatus, barChartDataStatus, error } = useSelector((state: RootState) => state.data);
 
   useEffect(() => {
     dispatch(fetchTransactions());
@@ -27,11 +27,10 @@ const DashboardCharts = () => {
 
   if (transactionStatus === 'failed' || barChartDataStatus === 'failed') {
     return <div>Error: {error}</div>;
-  }
-
-
+  }  
+  
   const getChartData = () => {
-    if (window.innerWidth <= 768) {
+    if (typeof window !== 'undefined' && window.innerWidth <= 768) {
       // For mobile devices, handle mobileSelectedData
       if (mobileSelectedData === 'Weekly') {
         return barChartData.slice(-7);
@@ -52,7 +51,8 @@ const DashboardCharts = () => {
     }
   };
   
-  
+
+
   const totalDelivered = getChartData().reduce((acc: number, curr: BarChartData) => acc + curr.delivered, 0);
 
   const handleSelectChange = (value: string) => {

@@ -123,14 +123,6 @@ letter-spacing: 0em;
 color: #424242;
 }
 
-// .mobile{
-//   // display: none;
-//   // visibility: hidden;
-//   // width: 0;
-//   // height: 0;
-//   // width: 100px;
-//   // height: 34px;
-// }
       }
 
       .lower p{
@@ -143,10 +135,7 @@ color: #424242;
 
     }
     .chart{
-      // border: 1px solid green;
       overflow-y: hidden;
-      // overflow-x: hidden;
-      // width: 50%;
     }
   }
  
@@ -154,16 +143,8 @@ color: #424242;
 @media only screen and (max-width:768px){
   .container{
     border: none;
-
-    // width: 336px;
     width: 100%;
-// height: 279px;
-// top: 325px;
-// left: 20px;
 border-radius: 8px;
-// border: 1px;
-// border: 1px solid red;
-// border-radius: 5px;
 margin-top: 0px;
 
 .top{
@@ -172,11 +153,9 @@ margin-top: 0px;
   }
 
   .charts{
-    // border: 1px solid red;
 .text{
   .upper{
     position: relative;
-    // border: 1px solid red;
     p{
       display: none;
     }
@@ -191,11 +170,7 @@ color: #292D32;
 
     }
     .mobile{
-      // display: inline-block;
-      // visibility: visible;
       width: 100px;
-      // height: 25px;
-      // height: 34px;
       position: absolute;
       right: 0;
     }

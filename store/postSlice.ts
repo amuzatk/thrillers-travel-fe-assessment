@@ -1,61 +1,8 @@
-// import { createSlice, createAsyncThunk, AsyncThunkAction } from '@reduxjs/toolkit';
-// import { BarChartData, Data, Transaction } from '../interfaces/user';
-
-// // Define the return type of fetchPosts
-// export const fetchPosts = createAsyncThunk<Data, void>(
-//   'posts/fetchPosts',
-//   async () => {
-//     try {
-//       const response = await fetch('http://localhost:5000/data');
-//       if (!response.ok) {
-//         throw new Error('Failed to fetch posts');
-//       }
-//       return response.json();
-//     } catch (error) {
-//       throw new Error('Failed to fetch posts');
-//     }
-//   }
-// );
-
-// interface PostsState {
-//   posts: Transaction[] | BarChartData[];
-//   status: 'idle' | 'loading' | 'succeeded' | 'failed';
-//   error: string | null;
-// }
-
-// // Define the slice
-// const postsSlice = createSlice({
-//   name: 'posts',
-//   initialState: {
-//     posts: [],
-//     status: 'idle',
-//     error: null,
-//   } as PostsState,
-//   reducers: {},
-//   extraReducers: (builder) => {
-//     builder
-//       .addCase(fetchPosts.pending, (state) => {
-//         state.status = 'loading';
-//       })
-//       .addCase(fetchPosts.fulfilled, (state, action) => {
-//         state.status = 'succeeded';
-//         state.posts = action.payload.transactions;
-//       })
-//       .addCase(fetchPosts.rejected, (state, action) => {
-//         state.status = 'failed';
-//         state.error = action.error.message ?? 'Unknown error';
-//       });
-//   },
-// });
-
-// export default postsSlice.reducer;
-
-
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { BarChartData, Data, Transaction } from '../interfaces/user';
+import { BarChartData, Transaction } from '../interfaces/user';
 
 export const fetchTransactions = createAsyncThunk<Transaction[]>(
-  'posts/fetchTransactions',
+  'data/fetchTransactions',
   async () => {
     const response = await fetch('http://localhost:5000/transactions');
     if (!response.ok) {
@@ -66,7 +13,7 @@ export const fetchTransactions = createAsyncThunk<Transaction[]>(
 );
 
 export const fetchBarChartData = createAsyncThunk<BarChartData[]>(
-  'posts/fetchBarChartData',
+  'data/fetchBarChartData',
   async () => {
     const response = await fetch('http://localhost:5000/barChartData');
     if (!response.ok) {
@@ -85,7 +32,7 @@ interface PostsState {
 }
 
 const postsSlice = createSlice({
-  name: 'posts',
+  name: 'data',
   initialState: {
     transactions: [],
     barChartData: [],
