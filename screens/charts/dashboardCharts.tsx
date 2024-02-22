@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { BarChart, XAxis, YAxis, Tooltip, ResponsiveContainer, Bar } from 'recharts';
 import styles from '../../styles/dashboard/Charts.module.scss';
-import { BarChartData } from '../../interfaces';
 import CustomSelect from './CustomSelect';
 import MobileCustomSelect from './MobileCustomSelect';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store';
 import { useAppDispatch } from '../../store/hooks';
 import { fetchTransactions, fetchBarChartData } from '../../store/postSlice';
+import { BarChartData } from '../../interfaces/user';
 
 const DashboardCharts = () => {
   const [selectedData, setSelectedData] = useState<string>('Last 7 days');
@@ -50,7 +50,6 @@ const DashboardCharts = () => {
       }
     }
   };
-  
 
 
   const totalDelivered = getChartData().reduce((acc: number, curr: BarChartData) => acc + curr.delivered, 0);

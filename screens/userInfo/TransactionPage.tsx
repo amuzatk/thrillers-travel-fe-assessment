@@ -3,13 +3,13 @@ import { Table, Spin, Alert, Checkbox } from "antd";
 import styles from '../../styles/dashboard/UserInfo3.module.scss';
 import moment from "moment";
 import Paginate from "./pagination";
-import {  Transaction } from "../../interfaces";
 
 import { useSelector } from 'react-redux';
 import { fetchTransactions } from '../../store/postSlice';
 import { RootState } from '../../store';
 import { useAppDispatch } from '../../store/hooks';
 import TransactionCard from "./TransactionCard";
+import { Transaction } from "../../interfaces/user";
 
 const TransactionPage =() => {
   const [filteredData, setFilteredData] = useState<Transaction[]>([]);
@@ -167,6 +167,7 @@ const columns = [
     <div className={styles.header}>
       <h1>Transactions</h1>
     </div>
+    {/* mobile screens */}
     <TransactionCard/>
     </>
   );

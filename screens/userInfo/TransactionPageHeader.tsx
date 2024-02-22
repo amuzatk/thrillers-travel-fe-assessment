@@ -48,7 +48,6 @@ const TransactionPageHeader = () => {
             <div className={styles.picker}>
             <Image src={Calendar} alt='Calendar' width={20} height={20} />
             <span>June 6, 2023 - Jun 15, 2023</span>
-            {/* <input className={styles.picker} type="text" /> */}
            
             </div>
             <div className={styles.export}>
