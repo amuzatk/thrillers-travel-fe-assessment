@@ -3,7 +3,6 @@ import { Table, Spin, Alert, Checkbox } from "antd";
 import styles from '../../styles/dashboard/UserInfo3.module.scss';
 import moment from "moment";
 import Paginate from "./pagination";
-
 import { useSelector } from 'react-redux';
 import { fetchTransactions } from '../../store/postSlice';
 import { RootState } from '../../store';

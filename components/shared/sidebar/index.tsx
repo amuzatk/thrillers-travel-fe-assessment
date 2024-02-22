@@ -20,12 +20,7 @@ interface LinkItem {
   ICON: (isActive: boolean) => JSX.Element;
 }
 
-type SideBarProps = {
-  selectedOrganization: string;
-  onOrganizationChange: (newOrganization: string) => void;
-};
-
-const SideBar = ({ selectedOrganization, onOrganizationChange }: SideBarProps) => {
+const SideBar = () => {
   // const [sideNav] = useState(true);
   const router = useRouter();
 
@@ -88,8 +83,8 @@ const SideBar = ({ selectedOrganization, onOrganizationChange }: SideBarProps) =
       <div className={styles.brief}>
         <Image src={GlobeIcon} width={16} height={16} alt="Briefcase" />
         <SelectTemplate 
-        onChange={onOrganizationChange}
-         selectedOrganization={selectedOrganization}
+        // onChange={onOrganizationChange}
+        //  selectedOrganization={selectedOrganization}
          />
       </div>
       <div className={styles.globe}>

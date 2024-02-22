@@ -8,21 +8,17 @@ import DashboardInfo from "../../../screens/userDetailPage/userMainPage";
 type Props = {
   children?: ReactNode;
   title?: string;
-  isDetailPage: boolean;
-  selectedOrganization?: string;
-  onOrganizationChange?: (newOrganization: string) => void;
-  // onSearchResultsChange?: (searchResult: User[]) => void;
+  isNotDashboard: boolean;
+  // isDashboard: boolean;
 };
 
 const Layout = ({
   children,
   title = "This is the default title",
-  isDetailPage = false,
-  selectedOrganization,
-  onOrganizationChange,
-  // onSearchResultsChange,
+  isNotDashboard = false,
+  // isDashboard = false,
 }: Props) => {
-  const [mainDash, setMainDash] = useState(!isDetailPage);
+  const [mainDash, setMainDash] = useState(!isNotDashboard);
   const [mobileMenu, setMobileMenu] = useState(false);
   const [screenWidth, setScreenWidth] = useState(
     typeof window !== "undefined" ? window.innerWidth : 0
@@ -46,14 +42,13 @@ const Layout = ({
   }, []); // Empty dependency array to run the effect only once on mount
 
   useEffect(() => {
-    setMainDash(!isDetailPage);
-  }, [isDetailPage]);
+    setMainDash(!isNotDashboard);
+  }, [isNotDashboard]);
 
   return (
     <div>
       <NavBar
         handleOpenMenu={() => setMobileMenu(true)}
-        // onSearchResultsChange={onSearchResultsChange}
       />
       <div className={styles.main}>
         <div className={styles.layout}>
@@ -67,18 +62,12 @@ const Layout = ({
                 closable={true}
                 width={260}
               >
-                <SideBar
-                  selectedOrganization={selectedOrganization}
-                  onOrganizationChange={onOrganizationChange}
-                />
+                <SideBar/>
               </Drawer>
             )}
             {/* ASIDE WEB */}
             <div className={styles.webDash}>
-              <SideBar
-                selectedOrganization={selectedOrganization}
-                onOrganizationChange={onOrganizationChange}
-              />
+              <SideBar/>
             </div>
           </div>
           <div
@@ -91,16 +80,16 @@ const Layout = ({
           >
             {mainDash ? (
               <>
-               <DashboardInfo
-              />
+               <DashboardInfo />
+               {/* <h2>TEST</h2> */}
               </>
-            ) : null}
-            {/* Render child components and pass retrieved mock data */}
+            ) : 
+            null
+            // <h1>NOT MAIN DASHBOARD</h1>
+            }
             <div className={styles.body}>
               {React.Children.map(children, (child) => {
                 return React.cloneElement(child as React.ReactElement, {
-                  // mockTableData: retrievedMockTableData,
-                  // mockBarChartData: retrievedMockBarChartData,
                 });
               })}
             </div>

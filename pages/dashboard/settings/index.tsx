@@ -5,7 +5,7 @@ const SettingsPage = () => {
 
   return (
     <Layout 
-      isDetailPage={false}  
+    isNotDashboard={true}  
        >
      <h1 style={{marginTop:"40px", fontSize:"25px"}}> SettingsPage Page </h1>
     </Layout>

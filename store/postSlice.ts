@@ -1,27 +1,60 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { BarChartData, Transaction } from '../interfaces/user';
 
+// export const fetchTransactions = createAsyncThunk<Transaction[]>(
+//   'data/fetchTransactions',
+//   async () => {
+//     const response = await fetch('http://localhost:5000/transactions');
+//     if (!response.ok) {
+//       throw new Error('Failed to fetch transactions');
+//     }
+//     return response.json();
+//   }
+// );
+
+// export const fetchBarChartData = createAsyncThunk<BarChartData[]>(
+//   'data/fetchBarChartData',
+//   async () => {
+//     const response = await fetch('http://localhost:5000/barChartData');
+//     if (!response.ok) {
+//       throw new Error('Failed to fetch bar chart data');
+//     }
+//     return response.json();
+//   }
+// );
+
 export const fetchTransactions = createAsyncThunk<Transaction[]>(
   'data/fetchTransactions',
   async () => {
-    const response = await fetch('http://localhost:5000/transactions');
-    if (!response.ok) {
-      throw new Error('Failed to fetch transactions');
+    try {
+      const response = await fetch('http://localhost:5000/transactions');
+      if (!response.ok) {
+        throw new Error('Failed to fetch transactions');
+      }
+      return response.json();
+    } catch (error) {
+      // Handle the error
+      throw error; // Re-throw the error to be caught by the Redux thunk middleware
     }
-    return response.json();
   }
 );
 
 export const fetchBarChartData = createAsyncThunk<BarChartData[]>(
   'data/fetchBarChartData',
   async () => {
-    const response = await fetch('http://localhost:5000/barChartData');
-    if (!response.ok) {
-      throw new Error('Failed to fetch bar chart data');
+    try {
+      const response = await fetch('http://localhost:5000/barChartData');
+      if (!response.ok) {
+        throw new Error('Failed to fetch bar chart data');
+      }
+      return response.json();
+    } catch (error) {
+      // Handle the error
+      throw error; // Re-throw the error to be caught by the Redux thunk middleware
     }
-    return response.json();
   }
 );
+
 
 interface PostsState {
   transactions: Transaction[];

@@ -5,7 +5,7 @@ const Guarantors = () => {
 
   return (
     <Layout
-      isDetailPage={false} 
+    isNotDashboard={true} 
         >
       <div>
         <h1 style={{ marginTop: "40px" }}>Transfer Page </h1>

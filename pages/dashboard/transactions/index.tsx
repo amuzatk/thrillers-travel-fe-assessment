@@ -8,7 +8,7 @@ const UsersDashboard = () => {
 
   return (
     <Layout 
-      isDetailPage={true} 
+    isNotDashboard={true} 
   >
     <>
     <TransactionPageHeader />
